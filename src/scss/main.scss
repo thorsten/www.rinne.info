@@ -1,0 +1,106 @@
+//---------------------------------------------
+//
+//  Table of Contents
+//
+//    1. Basics
+//    2. Page Layout
+//    3. Components
+//
+//---------------------------------------------
+
+//---------------------------------------------
+// 1. Basics
+//---------------------------------------------
+
+@import "variables";
+@import "bootstrap";
+@import "fonts";
+
+// If you do not want to load the customized bootstrap version, just use the following line.
+// @import "~bootstrap/scss/bootstrap";
+
+//---------------------------------------------
+// 2. Page Layout
+//---------------------------------------------
+
+body {
+
+  :root {
+    color-scheme: dark;
+  }
+  .divider {
+    height: 2rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
+  }
+
+  .blockquote {
+    &-footer {
+      color: $gray-600;
+    }
+  }
+
+  .form-control {
+    color-scheme: light;
+  }
+
+  .input-group-addon {
+    color: $white;
+  }
+
+  .form-floating > label {
+    color: $gray-700;
+  }
+
+  .nav-tabs,
+  .nav-pills {
+    .nav-link,
+    .nav-link.active,
+    .nav-link.active:focus,
+    .nav-link.active:hover,
+    .nav-item.open .nav-link,
+    .nav-item.open .nav-link:focus,
+    .nav-item.open .nav-link:hover {
+      color: $white;
+    }
+  }
+
+  .breadcrumb a {
+    color: $white;
+  }
+
+  .pagination {
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .alert {
+    color: $white;
+    border: none;
+
+    a,
+    .alert-link {
+      color: $white;
+      text-decoration: underline;
+    }
+
+    @each $color, $value in $theme-colors {
+      &-#{$color} {
+        @if $enable-gradients {
+          background: $value linear-gradient(180deg, mix($white, $value, 15%), $value) repeat-x;
+        } @else {
+          background-color: $value;
+        }
+      }
+    }
+  }
+}
+
+//---------------------------------------------
+// 3.Components
+//---------------------------------------------
+
+@import "components/slider";
