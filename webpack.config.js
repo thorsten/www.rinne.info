@@ -92,6 +92,26 @@ export default {
       ]
     }),
 
+    // Copy data privacy
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "datenschutzerklaerung.html",
+          to: "./",
+        }
+      ]
+    }),
+
+    // Copy Google Site verification
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "google7f4ed59b7a6a5500.html",
+          to: "./",
+        }
+      ]
+    }),
+
     // Inject styles and scripts into the HTML
     new HtmlWebpackPlugin({
       template: path.resolve(process.cwd(), "index.html")
