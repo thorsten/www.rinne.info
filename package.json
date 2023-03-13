@@ -36,7 +36,7 @@
         "sass": "^1.58.2",
         "sass-loader": "^13.0.2",
         "sharp": "^0.31.0",
-        "style-loader": "^3.3.1",
+        "style-loader": "^3.3.2",
         "trash": "^8.1.1",
         "uuid": "^9.0.0",
         "webpack": "^5.76.1",
