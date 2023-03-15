@@ -41,6 +41,6 @@
         "uuid": "^9.0.0",
         "webpack": "^5.76.1",
         "webpack-cli": "^5.0.0",
-        "webpack-dev-server": "^4.7.4"
+        "webpack-dev-server": "^4.12.0"
     }
 }
