@@ -35,7 +35,7 @@
         "postcss-preset-env": "^8.0.1",
         "sass": "^1.59.3",
         "sass-loader": "^13.2.1",
-        "sharp": "^0.31.0",
+        "sharp": "^0.32.0",
         "style-loader": "^3.3.2",
         "trash": "^8.1.1",
         "uuid": "^9.0.0",
