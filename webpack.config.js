@@ -35,30 +35,20 @@ export default {
           }
         }
       },
-      // CSS, PostCSS, and Sass
+      // CSS + PostCSS (Tailwind v4)
       {
-        test: /\.(scss|css)$/,
+        test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
-              importLoaders: 2,
+              importLoaders: 1,
               sourceMap: true,
               url: false,
             }
           },
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [
-                  "autoprefixer",
-                ]
-              }
-            }
-          },
-          "sass-loader"
+          "postcss-loader",
         ],
       },
       // File loader for images
