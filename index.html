@@ -25,10 +25,10 @@
 <body>
 
 <nav id="nav" class="nav-shell glass-nav">
-  <a href="#top" class="flex items-baseline gap-[10px] text-[15px] font-medium tracking-[-0.01em] text-fg no-underline">
-    <span class="inline-block w-[7px] h-[7px] rounded-full bg-accent shadow-[0_0_14px_var(--color-accent)] -translate-y-[2px]"></span>Thorsten Rinne
+  <a href="#top" class="flex items-baseline gap-2.5 text-[15px] font-medium tracking-[-0.01em] text-fg no-underline">
+    <span class="inline-block w-1.75 h-1.75 rounded-full bg-accent shadow-[0_0_14px_var(--color-accent)] -translate-y-0.5"></span>Thorsten Rinne
   </a>
-  <div id="navLinks" class="hidden md:flex gap-1 font-mono text-[12px] tracking-[0.04em] uppercase">
+  <div id="navLinks" class="nav-links font-mono text-[12px] tracking-[0.04em] uppercase">
     <a href="#profil" data-section="profil" class="nav-link">Profil</a>
     <a href="#studium" data-section="studium" class="nav-link">Ausbildung</a>
     <a href="#erfahrung" data-section="erfahrung" class="nav-link">Erfahrung</a>
@@ -36,24 +36,28 @@
     <a href="#talks" data-section="talks" class="nav-link">Talks</a>
     <a href="#kontakt" data-section="kontakt" class="nav-link">Kontakt</a>
   </div>
-  <div class="flex items-center gap-[6px]">
+  <div class="flex items-center gap-1.5">
     <button id="themeBtn" class="icon-btn" aria-label="Theme wechseln" title="Theme">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <button id="navToggle" class="icon-btn nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg id="navIconOpen" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg id="navIconClose" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
 </nav>
 
-<header id="top" class="hero relative h-screen min-h-[640px] overflow-hidden isolate">
+<header id="top" class="hero relative h-screen min-h-160 overflow-hidden isolate">
   <div id="heroImg" class="hero-img"></div>
-  <div class="absolute inset-0 mx-auto flex flex-col justify-end px-(--pad) pb-[clamp(40px,8vh,80px)] max-w-(--maxw)">
-    <div class="reveal relative z-2 mb-[26px] flex items-center gap-[14px] font-mono text-[12px] tracking-[0.12em] uppercase text-accent">
+  <div class="absolute inset-0 mx-auto flex flex-col justify-end px-pad pb-[clamp(40px,8vh,80px)] max-w-(--maxw)">
+    <div class="reveal relative z-2 mb-6.5 flex items-center gap-3.5 font-mono text-[12px] tracking-[0.12em] uppercase text-accent">
       <span class="inline-block w-10 h-px bg-accent"></span>Thorsten Rinne · Schwabmünchen, DE
     </div>
-    <h1 class="hero-name reveal relative z-2 m-0 mb-[18px] max-w-[12ch] font-sans font-semibold leading-[0.92] tracking-[-0.025em] text-[clamp(68px,11vw,168px)]">
+    <h1 class="hero-name reveal relative z-2 m-0 mb-4.5 max-w-full md:max-w-[12ch] font-sans font-semibold leading-[0.92] tracking-tight text-[clamp(48px,11vw,168px)] break-words">
       Hallo,<br/>ich bin <em>Thorsten.</em>
     </h1>
-    <p class="reveal relative z-2 m-0 max-w-[52ch] text-white/95 text-[clamp(16px,1.4vw,19px)] [text-shadow:0_1px_8px_rgba(0,0,0,0.6)] light:text-fg-dim">
-      Web Engineer, Open-Source-Entwickler und Partner bei MaibornWolff in Augsburg. Seit über zwei Jahrzehnten im Web zuhause.
+    <p class="reveal relative z-2 m-0 max-w-[52ch] text-white/95 text-[clamp(16px,1.4vw,19px)] [text-shadow:0_2px_10px_rgba(0,0,0,0.75)]">
+      Web Engineer, Open-Source-Entwickler, Technical Head of Smart Energy und Partner bei MaibornWolff in Augsburg. Seit bald drei Jahrzehnten im Web zu Hause.
     </p>
   </div>
   <div class="reveal absolute right-(--pad) bottom-[clamp(40px,8vh,80px)] z-2 hidden md:block text-right font-mono text-[11px] tracking-[0.08em] uppercase text-white/70 leading-[1.8] light:text-fg-muted">
@@ -62,7 +66,7 @@
     <div>—</div>
     <div>65.6831°N 17.5500°W</div>
   </div>
-  <div class="scroll-hint absolute bottom-6 left-1/2 -translate-x-1/2 z-2 flex flex-col items-center gap-[10px] font-mono text-[10px] tracking-[0.2em] uppercase text-white/55">
+  <div class="scroll-hint absolute bottom-6 left-1/2 -translate-x-1/2 z-2 flex flex-col items-center gap-2.5 font-mono text-[10px] tracking-[0.2em] uppercase text-white/55">
     Scroll
   </div>
 </header>
@@ -80,14 +84,14 @@
     </div>
     <div class="grid items-start gap-10 md:grid-cols-[180px_1fr_340px]">
       <div></div>
-      <div class="reveal max-w-[58ch] space-y-[22px] text-[clamp(18px,1.5vw,22px)] leading-[1.55] [&_p]:m-0 [&_p:nth-child(n+2)]:text-fg-dim [&_a]:text-accent [&_a]:no-underline [&_a]:border-b [&_a]:border-accent/40 [&_a:hover]:border-accent">
-        <p>Ich bin 49 Jahre alt, wohne in <a rel="nofollow" target="_blank" href="https://www.schwabmuenchen.de/">Schwabmünchen</a> und bin Partner sowie stellvertretender Bereichsleiter Web Engineering bei der <a rel="nofollow" target="_blank" href="https://www.maibornwolff.de">MaibornWolff GmbH</a> in Augsburg.</p>
+      <div class="reveal max-w-[58ch] space-y-5.5 text-[clamp(18px,1.5vw,22px)] leading-[1.55] [&_p]:m-0 [&_p:nth-child(n+2)]:text-fg-dim [&_a]:text-accent [&_a]:no-underline [&_a]:border-b [&_a]:border-accent/40 [&_a:hover]:border-accent">
+        <p>Ich bin 49 Jahre alt, wohne in <a rel="nofollow" target="_blank" href="https://www.schwabmuenchen.de/">Schwabmünchen</a> und bin Partner sowie Technical Head of Smart Energy bei der <a rel="nofollow" target="_blank" href="https://www.maibornwolff.de">MaibornWolff GmbH</a> in Augsburg.</p>
         <p>Darüber hinaus programmiere ich Open-Source-Web-Applikationen auf Basis von <abbr title="Rekursives Akronym für PHP: Hypertext Preprocessor">PHP</abbr> und MySQL. Mein Hauptprojekt ist seit 2001 das Open Source <abbr title="Frequently Asked Questions">FAQ</abbr>-System <a href="https://www.phpmyfaq.de">phpMyFAQ</a>. Von Zeit zu Zeit halte ich auch <a href="#talks">Vorträge</a> rund um das Thema PHP und HTML5 auf Konferenzen weltweit.</p>
-        <p>In meiner Freizeit bin ich gerne mit Frau und meinen beiden Töchtern unterwegs, spiele Handball, gehe gerne Wandern, treffe Freunde, koche und fotografiere sehr gerne. Seit einiger Zeit drucke ich auch gerne mit meinem 3D-Drucker allerlei sinnvolle und nicht so sinnvolle Dinge.</p>
+        <p>In meiner Freizeit bin ich gerne mit Frau und meinen beiden Töchtern unterwegs, spiele Handball, gehe gerne Wandern, treffe Freunde, koche, mache mein Zuhause smarter mit Home Assistant und fotografiere sehr gerne. Seit einiger Zeit drucke ich auch gerne mit meinem 3D-Drucker allerlei sinnvolle und nicht so sinnvolle Dinge.</p>
       </div>
-      <div class="reveal relative aspect-[3/4] overflow-hidden rounded-card bg-bg-elev">
+      <div class="reveal relative aspect-3/4 overflow-hidden rounded-card bg-bg-elev">
         <img src="images/thorsten.jpg" alt="Thorsten Rinne" loading="lazy" class="block h-full w-full object-cover">
-        <div class="absolute inset-x-[14px] bottom-[14px] flex justify-between font-mono text-[10px] tracking-[0.1em] uppercase text-white/90 [text-shadow:0_1px_6px_rgba(0,0,0,0.7)]">
+        <div class="absolute inset-x-3.5 bottom-3.5 flex justify-between font-mono text-[10px] tracking-widest uppercase text-white/90 [text-shadow:0_1px_6px_rgba(0,0,0,0.7)]">
           <span>THORSTEN</span><span>35mm</span>
         </div>
       </div>
@@ -100,10 +104,10 @@
       </div>
       <div class="stat">
         <div class="m-0 mb-2 font-sans leading-none tracking-[-0.02em] text-[clamp(38px,4vw,56px)]"><em class="not-italic text-accent">25</em><span class="text-fg-muted">+</span></div>
-        <div class="font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">OSS-Releases phpMyFAQ</div>
+        <div class="font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">Jahre mit phpMyFAQ</div>
       </div>
       <div class="stat">
-        <div class="m-0 mb-2 font-sans leading-none tracking-[-0.02em] text-[clamp(38px,4vw,56px)]"><em class="not-italic text-accent">6</em></div>
+        <div class="m-0 mb-2 font-sans leading-none tracking-[-0.02em] text-[clamp(38px,4vw,56px)]"><em class="not-italic text-accent">7</em></div>
         <div class="font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">Zertifizierungen</div>
       </div>
       <div class="stat">
@@ -151,6 +155,7 @@
           <li><span class="yr">2014</span><span>Core Elasticsearch Developer</span></li>
           <li><span class="yr">2015</span><span>FirstSpirit Basic Developer</span></li>
           <li><span class="yr">2020</span><span>ID37 Master</span></li>
+          <li><span class="yr">2026</span><span>STACKIT Certified Cloud Engineer Fundamentals</span></li>
         </ul>
       </div>
     </div>
@@ -168,20 +173,20 @@
     <div class="flex flex-col">
 
       <div class="exp reveal">
-        <div class="font-mono text-[12px] tracking-[0.06em] text-fg-muted pt-[10px]">2015 — <span class="text-accent">heute</span></div>
+        <div class="font-mono text-[12px] tracking-[0.06em] text-fg-muted pt-2.5">2015 — <span class="text-accent">heute</span></div>
         <div>
-          <h3 class="m-0 mb-[6px] font-sans font-medium leading-[1.05] tracking-[-0.015em] text-[clamp(28px,3.2vw,42px)]">MaibornWolff GmbH</h3>
-          <div class="m-0 mb-1 text-[16px] text-fg-dim">Stellv. Bereichsleiter und Partner</div>
+          <h3 class="m-0 mb-1.5 font-sans font-medium leading-[1.05] tracking-[-0.015em] text-[clamp(28px,3.2vw,42px)]">MaibornWolff GmbH</h3>
+          <div class="m-0 mb-1 text-[16px] text-fg-dim">Technical Head of Smart Energy und Partner</div>
           <div class="font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">Augsburg · Deutschland</div>
-          <div class="exp-detail max-w-[70ch] text-[15px] leading-[1.65] text-fg-dim">Projektleiter und Software-Architekt in Projekten bei Kunden wie STIHL, Bayernwerk, Lichtblick, Flughafen München, PAYBACK, SMA Solar Technology AG und Volkswagen. Fokus auf Web Platform Development, Continuous Integration sowie DevOps.</div>
+          <div class="exp-detail max-w-[70ch] text-[15px] leading-[1.65] text-fg-dim">Projektleiter und Software-Architekt in Projekten bei Kunden wie STIHL, Lechwerke, HVV, Bayernwerk, Lichtblick, Flughafen München, PAYBACK, SMA Solar Technology AG und Volkswagen. Fokus auf Web Platform Development in der Energie-Branche, Continuous Integration sowie DevOps.</div>
         </div>
         <div class="exp-arrow mt-1 flex h-10 w-10 items-center justify-center rounded-full border border-rule-soft text-fg-muted transition-all duration-300"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
       </div>
 
       <div class="exp reveal">
-        <div class="font-mono text-[12px] tracking-[0.06em] text-fg-muted pt-[10px]">2012 — 2015</div>
+        <div class="font-mono text-[12px] tracking-[0.06em] text-fg-muted pt-2.5">2012 — 2015</div>
         <div>
-          <h3 class="m-0 mb-[6px] font-sans font-medium leading-[1.05] tracking-[-0.015em] text-[clamp(28px,3.2vw,42px)]">Yatego GmbH</h3>
+          <h3 class="m-0 mb-1.5 font-sans font-medium leading-[1.05] tracking-[-0.015em] text-[clamp(28px,3.2vw,42px)]">Yatego GmbH</h3>
           <div class="m-0 mb-1 text-[16px] text-fg-dim">Team Lead Engineering</div>
           <div class="font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">München · Deutschland</div>
           <div class="exp-detail max-w-[70ch] text-[15px] leading-[1.65] text-fg-dim">Verantwortlich für das Refactoring der Shopping-Plattform Yatego mit der Migration von PHP 4.4 auf PHP 5.4, von MySQL 4.1 auf MySQL 5.5 und Percona Server 5.6. Entwicklung des neuen Frontends auf Basis von Symfony 2 und Elasticsearch, Varnish und nginx. Aufbau des unternehmensweiten Dashboards mit allen relevanten KPIs in Echtzeit.</div>
@@ -190,9 +195,9 @@
       </div>
 
       <div class="exp reveal">
-        <div class="font-mono text-[12px] tracking-[0.06em] text-fg-muted pt-[10px]">2004 — 2012</div>
+        <div class="font-mono text-[12px] tracking-[0.06em] text-fg-muted pt-2.5">2004 — 2012</div>
         <div>
-          <h3 class="m-0 mb-[6px] font-sans font-medium leading-[1.05] tracking-[-0.015em] text-[clamp(28px,3.2vw,42px)]">Mayflower GmbH</h3>
+          <h3 class="m-0 mb-1.5 font-sans font-medium leading-[1.05] tracking-[-0.015em] text-[clamp(28px,3.2vw,42px)]">Mayflower GmbH</h3>
           <div class="m-0 mb-1 text-[16px] text-fg-dim">Senior Developer and Team Lead</div>
           <div class="font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">München · Deutschland</div>
           <div class="exp-detail max-w-[70ch] text-[15px] leading-[1.65] text-fg-dim">Betreuung von Projekten bei Kunden wie HypoVereinsbank AG, Unicredit, CIAO, mapolis AG und M-net. Projektgrößen von Personenwochen bis mehreren Personenjahren mit PHP 4 und PHP 5, MySQL 4 und MySQL 5, Solr, Memcached, Varnish, Apache, nginx und vieles mehr.</div>
@@ -201,9 +206,9 @@
       </div>
 
       <div class="exp reveal">
-        <div class="font-mono text-[12px] tracking-[0.06em] text-fg-muted pt-[10px]">2003 — 2004</div>
+        <div class="font-mono text-[12px] tracking-[0.06em] text-fg-muted pt-2.5">2003 — 2004</div>
         <div>
-          <h3 class="m-0 mb-[6px] font-sans font-medium leading-[1.05] tracking-[-0.015em] text-[clamp(28px,3.2vw,42px)]">Böwe Systec AG</h3>
+          <h3 class="m-0 mb-1.5 font-sans font-medium leading-[1.05] tracking-[-0.015em] text-[clamp(28px,3.2vw,42px)]">Böwe Systec AG</h3>
           <div class="m-0 mb-1 text-[16px] text-fg-dim">Diplomand</div>
           <div class="font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">Augsburg · Deutschland</div>
           <div class="exp-detail max-w-[70ch] text-[15px] leading-[1.65] text-fg-dim">Thema der Arbeit: »Konzeption und Realisierung eines Prototypen für ein webbasiertes Produktions­planungs- und -steuerungs-System für Hochleistungskuvertierer« — Note 1,3.</div>
@@ -224,18 +229,18 @@
       </h2>
     </div>
     <div class="reveal max-w-[60ch] text-[17px] text-fg-dim">Wenn ich nicht programmiere, bin ich meist mit der Kamera unterwegs — Island, Australien, Neuseeland, Alpen, USA. Ein Auszug:</div>
-    <div class="reveal-stagger mt-14 grid gap-[14px] grid-cols-2 grid-rows-[240px_240px_240px] md:grid-cols-[1.6fr_1fr_1fr] md:grid-rows-[300px_300px]">
+    <div class="reveal-stagger mt-14 grid gap-3.5 grid-cols-2 grid-rows-[240px_240px_240px] md:grid-cols-[1.6fr_1fr_1fr] md:grid-rows-[300px_300px]">
       <div class="ph relative col-span-2 row-start-1 overflow-hidden rounded-card border border-rule-soft bg-bg-elev md:col-span-1 md:row-span-2">
         <div class="ph-img" style="background-image:url('images/slides/11-1110x547.jpg')"></div>
-        <div class="absolute inset-x-4 bottom-[14px] z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Skógafoss · IS</span><span class="text-white/60">08 / 2020</span></div>
+        <div class="absolute inset-x-4 bottom-3.5 z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Skógafoss · IS</span><span class="text-white/60">08 / 2020</span></div>
       </div>
       <div class="ph relative overflow-hidden rounded-card border border-rule-soft bg-bg-elev">
         <div class="ph-img" style="background-image:url('images/slides/10-1110x547.jpg')"></div>
-        <div class="absolute inset-x-4 bottom-[14px] z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Sextner Dolomiten · IT</span><span class="text-white/60">06 / 2022</span></div>
+        <div class="absolute inset-x-4 bottom-3.5 z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Sextner Dolomiten · IT</span><span class="text-white/60">06 / 2022</span></div>
       </div>
       <div class="ph relative overflow-hidden rounded-card border border-rule-soft bg-bg-elev">
         <div class="ph-img" style="background-image:url('images/slides/02-1110x547.jpg')"></div>
-        <div class="absolute inset-x-4 bottom-[14px] z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Whitehaven Beach · AU</span><span class="text-white/60">12 / 2006</span></div>
+        <div class="absolute inset-x-4 bottom-3.5 z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Whitehaven Beach · AU</span><span class="text-white/60">12 / 2006</span></div>
       </div>
       <div class="ph relative overflow-hidden rounded-card border border-rule-soft bg-bg-elev">
         <div class="ph-img" style="background-image:url('images/slides/08-1110x547.jpg')"></div>
@@ -243,7 +248,7 @@
       </div>
       <div class="ph relative overflow-hidden rounded-card border border-rule-soft bg-bg-elev">
         <div class="ph-img" style="background-image:url('images/slides/09-1110x547.jpg')"></div>
-        <div class="absolute inset-x-4 bottom-[14px] z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Cap Dramont · FR</span><span class="text-white/60">08 / 2022</span></div>
+        <div class="absolute inset-x-4 bottom-3.5 z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Cap Dramont · FR</span><span class="text-white/60">08 / 2022</span></div>
       </div>
     </div>
   </section>
@@ -258,22 +263,22 @@
       </h2>
     </div>
     <div class="reveal-stagger grid gap-px overflow-hidden rounded-card border border-rule-soft bg-rule-soft grid-cols-2 md:grid-cols-4">
-      <div class="flex min-h-[220px] flex-col gap-[14px] bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
+      <div class="flex min-h-55 flex-col gap-3.5 bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
         <div class="font-mono text-[14px] font-medium tracking-[0.08em] leading-none text-accent">H</div>
         <h4 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">Handball</h4>
         <p class="mt-auto mb-0 text-[13px] text-fg-muted">Aktiver Spieler. Seit der Jugend auf der Platte.</p>
       </div>
-      <div class="flex min-h-[220px] flex-col gap-[14px] bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
+      <div class="flex min-h-55 flex-col gap-3.5 bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
         <div class="font-mono text-[14px] font-medium tracking-[0.08em] leading-none text-accent">F</div>
         <h4 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">Fotografie</h4>
-        <p class="mt-auto mb-0 text-[13px] text-fg-muted">Landschaft, Langzeit­belichtung, Berge und Wasser — analog und digital.</p>
+        <p class="mt-auto mb-0 text-[13px] text-fg-muted">Landschaft, Berge und Wasser — digital mit DSLR und iPhone.</p>
       </div>
-      <div class="flex min-h-[220px] flex-col gap-[14px] bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
+      <div class="flex min-h-55 flex-col gap-3.5 bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
         <div class="font-mono text-[14px] font-medium tracking-[0.08em] leading-none text-accent">W</div>
         <h4 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">Wandern</h4>
-        <p class="mt-auto mb-0 text-[13px] text-fg-muted">Alpen, Island, Schottland. Je windiger, desto besser.</p>
+        <p class="mt-auto mb-0 text-[13px] text-fg-muted">Alpen, Island, USA, Australien, Neuseeland.</p>
       </div>
-      <div class="flex min-h-[220px] flex-col gap-[14px] bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
+      <div class="flex min-h-55 flex-col gap-3.5 bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
         <div class="font-mono text-[14px] font-medium tracking-[0.08em] leading-none text-accent">3D</div>
         <h4 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">3D-Druck</h4>
         <p class="mt-auto mb-0 text-[13px] text-fg-muted">Gelegentlich sehr seltsame Dinge. Vor allem Prototypen und Spielereien.</p>
@@ -296,8 +301,8 @@
       [&_.y]:font-sans [&_.y]:text-[48px] [&_.y]:leading-none [&_.y]:tracking-[-0.02em] [&_.y]:text-fg
       [&_.talk-items]:m-0 [&_.talk-items]:list-none [&_.talk-items]:p-0 [&_.talk-items]:flex [&_.talk-items]:flex-col [&_.talk-items]:gap-4
       [&_.talk-items_li]:grid [&_.talk-items_li]:gap-5 [&_.talk-items_li]:text-[15px] md:[&_.talk-items_li]:grid-cols-[110px_1fr]
-      [&_.when]:font-mono [&_.when]:text-[12px] [&_.when]:text-accent [&_.when]:pt-[3px]
-      [&_.what_strong]:block [&_.what_strong]:font-medium [&_.what_strong]:text-fg [&_.what_strong]:text-[17px] [&_.what_strong]:mb-[2px]
+      [&_.when]:font-mono [&_.when]:text-[12px] [&_.when]:text-accent [&_.when]:pt-0.75
+      [&_.what_strong]:block [&_.what_strong]:font-medium [&_.what_strong]:text-fg [&_.what_strong]:text-[17px] [&_.what_strong]:mb-0.5
       [&_.what_span]:text-fg-muted
       [&_.what_a]:text-accent [&_.what_a]:no-underline [&_.what_a]:border-b [&_.what_a]:border-accent/40">
 
@@ -716,6 +721,21 @@
   });
 
   const nav = document.getElementById('nav');
+  const navLinksEl = document.getElementById('navLinks');
+  const navToggle = document.getElementById('navToggle');
+  const navIconOpen = document.getElementById('navIconOpen');
+  const navIconClose = document.getElementById('navIconClose');
+  const setNavOpen = (open) => {
+    navLinksEl.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    navIconOpen.classList.toggle('hidden', open);
+    navIconClose.classList.toggle('hidden', !open);
+  };
+  navToggle.addEventListener('click', () => {
+    setNavOpen(!navLinksEl.classList.contains('open'));
+  });
+  navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNavOpen(false)));
   const navLinks = document.querySelectorAll('#navLinks a');
   const sections = ['profil','studium','erfahrung','reisen','talks','kontakt']
     .map(id => document.getElementById(id))
@@ -739,7 +759,7 @@
         io.unobserve(e.target);
       }
     }
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
 
   document.querySelectorAll('.exp').forEach(ex => {

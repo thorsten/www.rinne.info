@@ -48,7 +48,7 @@
 @custom-variant light (&:where([data-theme="light"] *, [data-theme="light"]));
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   body {
     background: var(--color-bg);
     color: var(--color-fg);
@@ -122,6 +122,67 @@
   }
   .nav-shell.scrolled { border-bottom-color: var(--color-rule-soft); }
 
+  [data-theme="light"] .nav-shell:not(.scrolled) {
+    background: color-mix(in oklab, #000 55%, transparent);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+  [data-theme="light"] .nav-shell:not(.scrolled) a,
+  [data-theme="light"] .nav-shell:not(.scrolled) .nav-link {
+    color: #fff !important;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+  }
+  [data-theme="light"] .nav-shell.scrolled {
+    background: color-mix(in oklab, var(--color-bg) 92%, transparent);
+  }
+  [data-theme="light"] .nav-shell:not(.scrolled) .nav-link:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.12);
+  }
+  [data-theme="light"] .nav-shell:not(.scrolled) .icon-btn {
+    color: rgba(255,255,255,0.92);
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  .nav-toggle { display: none; }
+  @media (min-width: 768px) {
+    .nav-links {
+      display: flex;
+      gap: 4px;
+    }
+  }
+  @media (max-width: 767px) {
+    .nav-toggle { display: inline-flex; }
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 12px var(--pad) 18px;
+      background: color-mix(in oklab, var(--color-bg) 92%, transparent);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      border-bottom: 1px solid var(--color-rule-soft);
+      transform: translateY(-8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s var(--ease-natural), transform 0.2s var(--ease-natural);
+    }
+    .nav-links.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .nav-links .nav-link {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+    }
+  }
+
   .hero-img {
     position: absolute;
     inset: 0;
@@ -177,23 +238,34 @@
 
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1px;
     margin-top: 48px;
     background: var(--color-rule-soft);
     border-top: 1px solid var(--color-rule-soft);
     border-bottom: 1px solid var(--color-rule-soft);
   }
+  @media (min-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  }
   .stats-grid > .stat { background: var(--color-bg); padding: 28px 8px 26px 0; }
 
   .exp {
     display: grid;
-    grid-template-columns: 180px 1fr auto;
-    gap: 40px;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
     padding: 32px 0;
     border-top: 1px solid var(--color-rule-soft);
     align-items: start;
     transition: background 0.3s var(--ease-natural);
+  }
+  .exp > :first-child { grid-column: 1 / -1; }
+  @media (min-width: 768px) {
+    .exp {
+      grid-template-columns: 180px 1fr auto;
+      gap: 40px;
+    }
+    .exp > :first-child { grid-column: auto; }
   }
   .exp:last-child { border-bottom: 1px solid var(--color-rule-soft); }
   .exp:hover { background: color-mix(in oklab, var(--color-fg) 3%, transparent); }
