@@ -63,7 +63,8 @@ Talks, certifications, career stations and the travel gallery live in `content/*
 
 `link` is optional; its `label` must appear verbatim in `text`. Talks are grouped by year, newest first.
 Certifications are sorted by year, stations by end year with `"to": null` meaning today.
-Photos (`content/photos.json`) are shown in file order, the first one large. `file` is the base name under
+Photos (`content/photos.json`) are shown in file order. Optional `size` is `large` (2×2), `wide` (2×1) or
+`tall` (1×2); the grid packs densely, so keep the cell count per row group a multiple of four. `file` is the base name under
 `static/images/reisen/`, which needs `<file>-600` and `<file>-1100` as `.avif` and `.webp`.
 
 ## Images

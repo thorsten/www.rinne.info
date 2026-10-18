@@ -1,13 +1,20 @@
 [
-  { "file": "11", "alt": "Skógafoss-Wasserfall, Island", "place": "Skógafoss · IS", "date": "08 / 2020" },
+  {
+    "file": "11",
+    "alt": "Skógafoss-Wasserfall, Island",
+    "place": "Skógafoss · IS",
+    "date": "08 / 2020",
+    "size": "large"
+  },
   { "file": "10", "alt": "Sextner Dolomiten, Südtirol", "place": "Sextner Dolomiten · IT", "date": "06 / 2022" },
   { "file": "02", "alt": "Whitehaven Beach, Australien", "place": "Whitehaven Beach · AU", "date": "12 / 2006" },
-  { "file": "08", "alt": "Yosemite-Nationalpark, USA", "place": "Yosemite · USA", "date": "03 / 2013" },
+  { "file": "08", "alt": "Yosemite-Nationalpark, USA", "place": "Yosemite · USA", "date": "03 / 2013", "size": "wide" },
   {
     "file": "09",
     "alt": "Cap Dramont an der Côte d’Azur, Frankreich",
     "place": "Cap Dramont · FR",
-    "date": "08 / 2022"
+    "date": "08 / 2022",
+    "size": "tall"
   },
   {
     "file": "05",
@@ -16,9 +23,22 @@
     "date": "12 / 2006"
   },
   { "file": "04", "alt": "Mount St. Helens, USA", "place": "Mount St. Helens · USA", "date": "06 / 2009" },
-  { "file": "07", "alt": "Red Canyon in Utah, USA", "place": "Red Canyon · USA", "date": "03 / 2013" },
-  { "file": "06", "alt": "Wüstenstraße im Südwesten der USA", "place": "Desert Road · USA", "date": "03 / 2013" },
   { "file": "12", "alt": "Landstraße durch das isländische Hochland", "place": "Ringstraße · IS", "date": "08 / 2020" },
-  { "file": "03", "alt": "Marlborough Sounds, Neuseeland", "place": "Marlborough Sounds · NZ", "date": "12 / 2008" },
-  { "file": "13", "alt": "Blue Eye, Karstquelle in Albanien", "place": "Blue Eye · AL", "date": "08 / 2026" }
+  { "file": "07", "alt": "Red Canyon in Utah, USA", "place": "Red Canyon · USA", "date": "03 / 2013", "size": "wide" },
+  { "file": "06", "alt": "Wüstenstraße im Südwesten der USA", "place": "Desert Road · USA", "date": "03 / 2013" },
+  {
+    "file": "13",
+    "alt": "Blue Eye, Karstquelle in Albanien",
+    "place": "Blue Eye · AL",
+    "date": "08 / 2026",
+    "size": "large"
+  },
+  { "file": "14", "alt": "Bergpanorama bei Welschnofen, Südtirol", "place": "Welschnofen · IT", "date": "06 / 2026", "size": "wide" },
+  {
+    "file": "03",
+    "alt": "Marlborough Sounds, Neuseeland",
+    "place": "Marlborough Sounds · NZ",
+    "date": "12 / 2008",
+    "size": "wide"
+  }
 ]

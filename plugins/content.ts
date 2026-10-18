@@ -37,7 +37,15 @@ export interface Photo {
   place: string;
   /** Optional, e.g. "08 / 2020". */
   date?: string;
+  /** Tile size in the gallery grid; default is one cell. */
+  size?: "large" | "wide" | "tall";
 }
+
+const PHOTO_SIZE_CLASSES: Record<NonNullable<Photo["size"]>, string> = {
+  large: " col-span-2 md:row-span-2",
+  wide: " col-span-2",
+  tall: " row-span-2",
+};
 
 export interface Experience {
   from: number;
@@ -124,10 +132,11 @@ export function renderExperience(experience: readonly Experience[]): string {
 
 export function renderPhotos(photos: readonly Photo[]): string {
   return photos
-    .map((p, i) => {
+    .map((p) => {
       const base = `/images/reisen/${encodeURIComponent(p.file)}`;
-      const sizes = i === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw";
-      const span = i === 0 ? " col-span-2 md:col-span-1 md:row-span-2" : "";
+      const twoColumns = p.size === "large" || p.size === "wide";
+      const sizes = twoColumns ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw";
+      const span = p.size ? PHOTO_SIZE_CLASSES[p.size] : "";
       const date = p.date ? `<span class="hidden text-white/60 sm:inline">${escapeHtml(p.date)}</span>` : "";
       return `      <figure class="ph relative m-0 overflow-hidden rounded-card border border-rule-soft bg-bg-elev${span}">
         <picture>
