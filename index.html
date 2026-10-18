@@ -39,7 +39,7 @@
   } catch (e) {}
 })();
 </script>
-<script type="module" src="/src/js/main.js"></script>
+<script type="module" src="/src/js/main.ts"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -328,22 +328,22 @@
     <div class="reveal-stagger grid gap-px overflow-hidden rounded-card border border-rule-soft bg-rule-soft grid-cols-2 md:grid-cols-4">
       <div class="flex min-h-55 flex-col gap-3.5 bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
         <div class="font-mono text-[14px] font-medium tracking-[0.08em] leading-none text-accent">H</div>
-        <h4 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">Handball</h4>
+        <h3 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">Handball</h3>
         <p class="mt-auto mb-0 text-[13px] text-fg-muted">Aktiver Spieler. Seit der Jugend auf der Platte.</p>
       </div>
       <div class="flex min-h-55 flex-col gap-3.5 bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
         <div class="font-mono text-[14px] font-medium tracking-[0.08em] leading-none text-accent">F</div>
-        <h4 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">Fotografie</h4>
+        <h3 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">Fotografie</h3>
         <p class="mt-auto mb-0 text-[13px] text-fg-muted">Landschaft, Berge und Wasser — digital mit DSLR und iPhone.</p>
       </div>
       <div class="flex min-h-55 flex-col gap-3.5 bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
         <div class="font-mono text-[14px] font-medium tracking-[0.08em] leading-none text-accent">W</div>
-        <h4 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">Wandern</h4>
+        <h3 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">Wandern</h3>
         <p class="mt-auto mb-0 text-[13px] text-fg-muted">Alpen, Island, USA, Australien, Neuseeland.</p>
       </div>
       <div class="flex min-h-55 flex-col gap-3.5 bg-bg-elev p-[32px_24px_28px] transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--color-accent)_8%,var(--color-bg-elev))]">
         <div class="font-mono text-[14px] font-medium tracking-[0.08em] leading-none text-accent">3D</div>
-        <h4 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">3D-Druck</h4>
+        <h3 class="m-0 font-sans font-medium leading-[1.15] text-[24px]">3D-Druck</h3>
         <p class="mt-auto mb-0 text-[13px] text-fg-muted">Gelegentlich sehr seltsame Dinge. Vor allem Prototypen und Spielereien.</p>
       </div>
     </div>
@@ -732,27 +732,18 @@
 
     <div class="reveal mb-14">
       <a href="mailto:thorsten@rinne.info" class="inline-block font-sans leading-[1.1] tracking-[-0.01em] text-[clamp(28px,3.4vw,44px)] text-fg no-underline [&_em]:not-italic [&_em]:font-normal [&_em]:text-accent">
-        thorsten <em>at</em> rinne <em>dot</em> info
+        thorsten<em>@</em>rinne.info
       </a>
     </div>
 
     <div class="reveal-stagger grid gap-x-16 gap-y-12 md:grid-cols-2
-      [&_h4]:m-0 [&_h4]:mb-[14px] [&_h4]:font-mono [&_h4]:font-medium [&_h4]:text-[11px] [&_h4]:tracking-[0.12em] [&_h4]:uppercase [&_h4]:text-accent
+      [&_h3]:m-0 [&_h3]:mb-[14px] [&_h3]:font-mono [&_h3]:font-medium [&_h3]:text-[11px] [&_h3]:tracking-[0.12em] [&_h3]:uppercase [&_h3]:text-accent
       [&_p]:m-0 [&_p]:mb-1 [&_p]:not-italic [&_p]:text-[15px] [&_p]:leading-[1.7] [&_p]:text-fg-dim
       [&_address]:m-0 [&_address]:mb-1 [&_address]:not-italic [&_address]:text-[15px] [&_address]:leading-[1.7] [&_address]:text-fg-dim
       [&_strong]:font-medium [&_strong]:text-fg
       [&_a]:text-accent [&_a]:no-underline [&_a]:border-b [&_a]:border-accent/40">
       <div>
-        <h4>Privat</h4>
-        <address>
-          <strong>Thorsten Rinne</strong><br/>
-          Hermann-Hesse-Straße 16<br/>
-          86830 Schwabmünchen<br/>
-          Deutschland
-        </address>
-      </div>
-      <div>
-        <h4>Geschäftlich</h4>
+        <h3>Impressum</h3>
         <address>
           <strong>WEBMEDIA concepts</strong><br/>
           Thorsten Rinne<br/>
@@ -763,17 +754,17 @@
         </address>
       </div>
       <div>
-        <h4>Bitte beachten</h4>
+        <h3>Bitte beachten</h3>
         <p>Bitte sehen Sie davon ab, mich wegen phpMyFAQ, Jobangeboten oder anderen Supportfragen anzurufen. Vielen Dank!</p>
       </div>
       <div>
-        <h4>Inhaltlich verantwortlich · §6 MDStV</h4>
+        <h3>Inhaltlich verantwortlich · §6 MDStV</h3>
         <p><strong>Thorsten Rinne</strong></p>
-        <h4 class="!mt-6">Datenschutz</h4>
+        <h3 class="!mt-6">Datenschutz</h3>
         <p><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></p>
       </div>
       <div class="md:col-span-2">
-        <h4>Haftungshinweis</h4>
+        <h3>Haftungshinweis</h3>
         <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
       </div>
     </div>
@@ -781,88 +772,9 @@
 </main>
 
 <footer class="shell flex flex-wrap items-center justify-between gap-3 border-t border-rule-soft py-9 font-mono text-[11px] tracking-[0.06em] uppercase text-fg-muted">
-  <div>Made with <span class="font-sans text-accent">♥</span> and ☕ &nbsp;·&nbsp; 1997 — 2026 Thorsten Rinne</div>
+  <div>Made with <span class="font-sans text-accent">♥</span> and ☕ &nbsp;·&nbsp; 1997 — <span data-year>2026</span> Thorsten Rinne</div>
   <div>rinne.info / v<span class="text-accent">4.0</span></div>
 </footer>
 
-<script>
-(() => {
-  const html = document.documentElement;
-  const themeBtn = document.getElementById('themeBtn');
-  themeBtn.addEventListener('click', () => {
-    const cur = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', cur);
-    localStorage.setItem('rinne-theme', cur);
-  });
-
-  const nav = document.getElementById('nav');
-  const navLinksEl = document.getElementById('navLinks');
-  const navToggle = document.getElementById('navToggle');
-  const navIconOpen = document.getElementById('navIconOpen');
-  const navIconClose = document.getElementById('navIconClose');
-  const setNavOpen = (open) => {
-    navLinksEl.classList.toggle('open', open);
-    navToggle.setAttribute('aria-expanded', String(open));
-    navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-    navIconOpen.classList.toggle('hidden', open);
-    navIconClose.classList.toggle('hidden', !open);
-  };
-  navToggle.addEventListener('click', () => {
-    setNavOpen(!navLinksEl.classList.contains('open'));
-  });
-  navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNavOpen(false)));
-  const navLinks = document.querySelectorAll('#navLinks a');
-  const sections = ['profil','studium','erfahrung','reisen','talks','kontakt']
-    .map(id => document.getElementById(id))
-    .filter(Boolean);
-  const heroImg = document.getElementById('heroImg');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let ticking = false;
-  const onScroll = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-      if (heroImg && !reduceMotion) heroImg.style.setProperty('--py', (window.scrollY * 0.3) + 'px');
-      ticking = false;
-    });
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  const sectionIo = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === e.target.id));
-    }
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  sections.forEach(s => sectionIo.observe(s));
-
-  const year = new Date().getFullYear();
-  document.querySelectorAll('[data-since]').forEach(el => { el.textContent = String(year - Number(el.dataset.since)); });
-
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    }
-  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
-
-  document.querySelectorAll('.exp').forEach(ex => {
-    const btn = ex.querySelector('.exp-arrow');
-    const setOpen = (open) => {
-      ex.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', open ? 'Details ausblenden' : 'Details anzeigen');
-    };
-    btn.addEventListener('click', (ev) => { ev.stopPropagation(); setOpen(!ex.classList.contains('open')); });
-    ex.addEventListener('click', () => {
-      if (window.matchMedia('(hover: none)').matches) setOpen(!ex.classList.contains('open'));
-    });
-  });
-})();
-</script>
 </body>
 </html>

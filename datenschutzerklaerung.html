@@ -21,7 +21,7 @@
   } catch (e) {}
 })();
 </script>
-<script type="module" src="/src/js/main.js"></script>
+<script type="module" src="/src/js/main.ts"></script>
 </head>
 <body>
 
@@ -117,20 +117,9 @@
 </main>
 
 <footer class="shell flex flex-wrap items-center justify-between gap-3 border-t border-rule-soft py-9 font-mono text-[11px] tracking-[0.06em] uppercase text-fg-muted">
-  <div>Made with <span class="font-sans text-accent">♥</span> and ☕ &nbsp;·&nbsp; 1997 — 2026 Thorsten Rinne</div>
+  <div>Made with <span class="font-sans text-accent">♥</span> and ☕ &nbsp;·&nbsp; 1997 — <span data-year>2026</span> Thorsten Rinne</div>
   <div>rinne.info / v<span class="text-accent">4.0</span></div>
 </footer>
 
-<script>
-(() => {
-  const html = document.documentElement;
-  const themeBtn = document.getElementById('themeBtn');
-  themeBtn.addEventListener('click', () => {
-    const cur = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', cur);
-    localStorage.setItem('rinne-theme', cur);
-  });
-})();
-</script>
 </body>
 </html>
