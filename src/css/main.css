@@ -115,8 +115,8 @@
   }
 
   .icon-btn {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border-radius: 999px;
     display: inline-flex;
     align-items: center;
@@ -321,7 +321,8 @@
   }
   @media (min-width: 768px) {
     .exp {
-      grid-template-columns: 180px 1fr auto;
+      grid-template-columns: 180px minmax(0, 72ch) auto;
+      justify-content: start;
       gap: 40px;
     }
     .exp > :first-child {

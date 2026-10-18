@@ -144,6 +144,7 @@
     <p class="reveal relative z-2 m-0 max-w-[52ch] text-white/95 text-[clamp(16px,1.4vw,19px)] [text-shadow:0_2px_10px_rgba(0,0,0,0.75)]">
       Web Engineer, Open-Source-Entwickler, Technical Head of Smart Energy und Partner bei MaibornWolff in Augsburg. Seit bald drei Jahrzehnten im Web zu Hause.
     </p>
+    <div class="reveal relative z-2 mt-6 font-mono text-[10px] tracking-[0.12em] uppercase text-white/60 md:hidden">Goðafoss · Island · August 2020</div>
   </div>
   <div class="reveal absolute right-(--pad) bottom-[clamp(40px,8vh,80px)] z-2 hidden md:block text-right font-mono text-[11px] tracking-[0.08em] uppercase text-white/70 leading-[1.8] light:text-fg-muted">
     <div class="text-white light:text-fg">Goðafoss</div>
@@ -151,25 +152,25 @@
     <div>—</div>
     <div>65.6831°N 17.5500°W</div>
   </div>
-  <div class="scroll-hint absolute bottom-6 left-1/2 -translate-x-1/2 z-2 flex flex-col items-center gap-2.5 font-mono text-[10px] tracking-[0.2em] uppercase text-white/55">
+  <div class="scroll-hint absolute bottom-6 left-1/2 -translate-x-1/2 z-2 hidden md:flex flex-col items-center gap-2.5 font-mono text-[10px] tracking-[0.2em] uppercase text-white/55">
     Scroll
   </div>
 </header>
 
 <main id="inhalt" class="shell">
 
-  <section id="profil" class="py-[clamp(80px,12vh,140px)] relative">
+  <section id="profil" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
         <span class="text-accent">●</span> 01 &nbsp;/&nbsp; Profil
       </div>
-      <h2 class="m-0 max-w-[16ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
-        Web&nbsp;Engineering seit <em class="not-italic font-normal text-accent">1997.</em>
+      <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
+        Web&nbsp;Engineering<br/><em class="not-italic font-normal text-accent">seit 1997.</em>
       </h2>
     </div>
     <div class="grid items-start gap-10 md:grid-cols-[180px_1fr_340px]">
       <div></div>
-      <div class="reveal max-w-[58ch] space-y-5.5 text-[clamp(18px,1.5vw,22px)] leading-[1.55] [&_p]:m-0 [&_p:nth-child(n+2)]:text-fg-dim [&_a]:text-accent [&_a]:no-underline [&_a]:border-b [&_a]:border-accent/40 [&_a:hover]:border-accent">
+      <div class="reveal max-w-[58ch] text-[clamp(18px,1.5vw,22px)] leading-[1.55] [&_p]:m-0 [&_p+p]:mt-5.5 [&_p:nth-child(n+2)]:text-fg-dim [&_a]:text-accent [&_a]:no-underline [&_a]:border-b [&_a]:border-accent/40 [&_a:hover]:border-accent">
         <p>Ich bin 49 Jahre alt, wohne in <a rel="nofollow" target="_blank" href="https://www.schwabmuenchen.de/">Schwabmünchen</a> und bin Partner sowie Technical Head of Smart Energy bei der <a rel="nofollow" target="_blank" href="https://www.maibornwolff.de">MaibornWolff GmbH</a> in Augsburg.</p>
         <p>Darüber hinaus programmiere ich Open-Source-Web-Applikationen auf Basis von <abbr title="Rekursives Akronym für PHP: Hypertext Preprocessor">PHP</abbr> und MySQL. Mein Hauptprojekt ist seit 2001 das Open Source <abbr title="Frequently Asked Questions">FAQ</abbr>-System <a href="https://www.phpmyfaq.de">phpMyFAQ</a>. Von Zeit zu Zeit halte ich auch <a href="#talks">Vorträge</a> rund um Web-Entwicklung, UX und AI-gestütztes Arbeiten auf Konferenzen und Meetups.</p>
         <p>In meiner Freizeit bin ich gerne mit Frau und meinen beiden Töchtern unterwegs, spiele Handball, gehe gerne Wandern, treffe Freunde, koche, mache mein Zuhause smarter mit Home Assistant und fotografiere sehr gerne. Seit einiger Zeit drucke ich auch gerne mit meinem 3D-Drucker allerlei sinnvolle und nicht so sinnvolle Dinge.</p>
@@ -180,7 +181,7 @@
           <source type="image/webp" srcset="/images/profil/thorsten-480.webp 480w, /images/profil/thorsten-800.webp 800w" sizes="(min-width: 768px) 340px, 100vw">
           <img src="/images/profil/thorsten-800.webp" width="1280" height="960" alt="Porträt von Thorsten Rinne" loading="lazy" decoding="async" class="block h-full w-full object-cover">
         </picture>
-        <div class="absolute inset-x-3.5 bottom-3.5 flex justify-between font-mono text-[10px] tracking-widest uppercase text-white/90 [text-shadow:0_1px_6px_rgba(0,0,0,0.7)]">
+        <div class="absolute inset-x-0 bottom-0 flex justify-between bg-linear-to-t from-black/70 to-transparent px-3.5 pt-8 pb-3.5 font-mono text-[10px] tracking-widest uppercase text-white/95">
           <span>THORSTEN</span><span>35mm</span>
         </div>
       </div>
@@ -206,16 +207,16 @@
     </div>
   </section>
 
-  <section id="studium" class="py-[clamp(80px,12vh,140px)] relative">
+  <section id="studium" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
         <span class="text-accent">●</span> 02 &nbsp;/&nbsp; Ausbildung
       </div>
-      <h2 class="m-0 max-w-[16ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
-        Studium &amp; <em class="not-italic font-normal text-accent">Zertifikate.</em>
+      <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
+        Studium &amp;<br/><em class="not-italic font-normal text-accent">Zertifikate.</em>
       </h2>
     </div>
-    <div class="reveal-stagger grid gap-8 md:grid-cols-2">
+    <div class="reveal-stagger grid gap-8 md:grid-cols-2 md:items-start">
       <div class="rounded-card border border-rule-soft bg-bg-elev p-9 transition-colors duration-300 hover:border-rule">
         <div class="mb-[18px] flex items-center gap-[10px] font-mono text-[11px] tracking-[0.1em] uppercase text-accent before:block before:h-[6px] before:w-[6px] before:rounded-full before:bg-accent">
           1999 — 2004
@@ -229,6 +230,10 @@
           <span class="rounded-full border border-rule-soft px-[10px] py-[6px] font-mono text-[11px] tracking-[0.04em] text-fg-dim">Open Source</span>
           <span class="rounded-full border border-rule-soft px-[10px] py-[6px] font-mono text-[11px] tracking-[0.04em] text-fg-dim">Software-Entwicklung</span>
           <span class="rounded-full border border-rule-soft px-[10px] py-[6px] font-mono text-[11px] tracking-[0.04em] text-fg-dim">Produktionsplanung &amp; -steuerung</span>
+        </div>
+        <div class="mt-8 border-t border-rule-soft pt-6">
+          <div class="mb-2 font-mono text-[11px] tracking-[0.1em] uppercase text-fg-muted">Diplomarbeit · Böwe Systec AG · Note 1,3</div>
+          <p class="m-0 text-[14px] leading-[1.6] text-fg-dim">»Konzeption und Realisierung eines Prototypen für ein webbasiertes Produktions­planungs- und -steuerungs-System für Hochleistungskuvertierer«</p>
         </div>
       </div>
       <div class="rounded-card border border-rule-soft bg-bg-elev p-9 transition-colors duration-300 hover:border-rule">
@@ -244,13 +249,13 @@
     </div>
   </section>
 
-  <section id="erfahrung" class="py-[clamp(80px,12vh,140px)] relative">
+  <section id="erfahrung" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
         <span class="text-accent">●</span> 03 &nbsp;/&nbsp; Erfahrung
       </div>
-      <h2 class="m-0 max-w-[16ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
-        Berufliche <em class="not-italic font-normal text-accent">Stationen.</em>
+      <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
+        Berufliche<br/><em class="not-italic font-normal text-accent">Stationen.</em>
       </h2>
     </div>
     <div class="flex flex-col">
@@ -259,13 +264,13 @@
     </div>
   </section>
 
-  <section id="reisen" class="py-[clamp(80px,12vh,140px)] relative">
+  <section id="reisen" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
         <span class="text-accent">●</span> 04 &nbsp;/&nbsp; Reisen
       </div>
-      <h2 class="m-0 max-w-[16ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
-        Fotografie unterwegs.
+      <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
+        Fotografie<br/><em class="not-italic font-normal text-accent">unterwegs.</em>
       </h2>
     </div>
     <div class="reveal max-w-[60ch] text-[17px] text-fg-dim">Wenn ich nicht programmiere, bin ich meist mit der Kamera unterwegs — Island, Australien, Neuseeland, Albanien, Alpen, USA. Ein Auszug:</div>
@@ -274,13 +279,13 @@
     </div>
   </section>
 
-  <section id="hobbies" class="py-[clamp(80px,12vh,140px)] relative">
+  <section id="hobbies" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
         <span class="text-accent">●</span> 05 &nbsp;/&nbsp; Nebensachen
       </div>
-      <h2 class="m-0 max-w-[16ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
-        Was ich sonst <em class="not-italic font-normal text-accent">so mache.</em>
+      <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
+        Was ich sonst<br/><em class="not-italic font-normal text-accent">so mache.</em>
       </h2>
     </div>
     <div class="reveal-stagger grid gap-px overflow-hidden rounded-card border border-rule-soft bg-rule-soft grid-cols-2 md:grid-cols-4">
@@ -307,19 +312,19 @@
     </div>
   </section>
 
-  <section id="talks" class="py-[clamp(80px,12vh,140px)] relative">
+  <section id="talks" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
         <span class="text-accent">●</span> 06 &nbsp;/&nbsp; Talks
       </div>
-      <h2 class="m-0 max-w-[16ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
-        Vorträge &amp; <em class="not-italic font-normal text-accent">Masterclasses.</em>
+      <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
+        Vorträge &amp;<br/><em class="not-italic font-normal text-accent">Masterclasses.</em>
       </h2>
     </div>
     <div class="reveal-stagger relative
-      [&_.talk-year]:grid [&_.talk-year]:items-baseline [&_.talk-year]:gap-10 [&_.talk-year]:py-7 [&_.talk-year]:border-t [&_.talk-year]:border-rule-soft md:[&_.talk-year]:grid-cols-[180px_1fr]
+      [&_.talk-year]:grid [&_.talk-year]:items-start [&_.talk-year]:gap-10 [&_.talk-year]:py-7 [&_.talk-year]:border-t [&_.talk-year]:border-rule-soft md:[&_.talk-year]:grid-cols-[180px_1fr]
       [&_.talk-year:last-child]:border-b [&_.talk-year:last-child]:border-rule-soft
-      [&_.y]:font-sans [&_.y]:text-[48px] [&_.y]:leading-none [&_.y]:tracking-[-0.02em] [&_.y]:text-fg
+      [&_.y]:font-sans md:[&_.y]:sticky md:[&_.y]:top-24 [&_.y]:text-[48px] [&_.y]:leading-none [&_.y]:tracking-[-0.02em] [&_.y]:text-fg
       [&_.talk-items]:m-0 [&_.talk-items]:list-none [&_.talk-items]:p-0 [&_.talk-items]:flex [&_.talk-items]:flex-col [&_.talk-items]:gap-4
       [&_.talk-items_li]:grid [&_.talk-items_li]:gap-5 [&_.talk-items_li]:text-[15px] md:[&_.talk-items_li]:grid-cols-[110px_1fr]
       [&_.when]:font-mono [&_.when]:text-[12px] [&_.when]:text-accent [&_.when]:pt-0.75
@@ -331,13 +336,13 @@
     </div>
   </section>
 
-  <section id="kontakt" class="py-[clamp(80px,12vh,140px)] relative">
+  <section id="kontakt" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
         <span class="text-accent">●</span> 07 &nbsp;/&nbsp; Kontakt
       </div>
-      <h2 class="m-0 max-w-[16ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
-        Kontakt &amp; <em class="not-italic font-normal text-accent">Impressum.</em>
+      <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
+        Kontakt &amp;<br/><em class="not-italic font-normal text-accent">Impressum.</em>
       </h2>
     </div>
 
@@ -347,7 +352,7 @@
       </a>
     </div>
 
-    <div class="reveal-stagger grid gap-x-16 gap-y-12 md:grid-cols-2
+    <div class="reveal-stagger grid gap-x-12 gap-y-12 md:grid-cols-3
       [&_h3]:m-0 [&_h3]:mb-[14px] [&_h3]:font-mono [&_h3]:font-medium [&_h3]:text-[11px] [&_h3]:tracking-[0.12em] [&_h3]:uppercase [&_h3]:text-accent
       [&_p]:m-0 [&_p]:mb-1 [&_p]:not-italic [&_p]:text-[15px] [&_p]:leading-[1.7] [&_p]:text-fg-dim
       [&_address]:m-0 [&_address]:mb-1 [&_address]:not-italic [&_address]:text-[15px] [&_address]:leading-[1.7] [&_address]:text-fg-dim
@@ -365,16 +370,16 @@
         </address>
       </div>
       <div>
-        <h3>Bitte beachten</h3>
-        <p>Bitte sehen Sie davon ab, mich wegen phpMyFAQ, Jobangeboten oder anderen Supportfragen anzurufen. Vielen Dank!</p>
-      </div>
-      <div>
         <h3>Inhaltlich verantwortlich · §6 MDStV</h3>
         <p><strong>Thorsten Rinne</strong></p>
         <h3 class="!mt-6">Datenschutz</h3>
         <p><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></p>
       </div>
-      <div class="md:col-span-2">
+      <div>
+        <h3>Bitte beachten</h3>
+        <p>Bitte sehen Sie davon ab, mich wegen phpMyFAQ, Jobangeboten oder anderen Supportfragen anzurufen. Vielen Dank!</p>
+      </div>
+      <div class="md:col-span-3">
         <h3>Haftungshinweis</h3>
         <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
       </div>
@@ -383,7 +388,7 @@
 </main>
 
 <footer class="shell flex flex-wrap items-center justify-between gap-3 border-t border-rule-soft py-9 font-mono text-[11px] tracking-[0.06em] uppercase text-fg-muted">
-  <div>Made with <span class="font-sans text-accent">♥</span> and ☕ &nbsp;·&nbsp; 1997 — <span data-year>2026</span> Thorsten Rinne</div>
+  <div>Made with <span class="font-sans text-accent">♥</span> and <svg class="inline-block -mt-0.5 h-3 w-3 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-label="Kaffee" role="img"><path d="M3 8h13v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5zM16 10h2a2 2 0 0 1 0 4h-2M6 2v2M10 2v2"/></svg> &nbsp;·&nbsp; 1997 — <span data-year>2026</span> Thorsten Rinne</div>
   <div>rinne.info / v<span class="text-accent">4.0</span></div>
 </footer>
 
