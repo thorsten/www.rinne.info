@@ -1,0 +1,12 @@
+{
+  "name": "Thorsten Rinne",
+  "short_name": "rinne.info",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1f1d1a",
+  "theme_color": "#1f1d1a",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

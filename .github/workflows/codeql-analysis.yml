@@ -25,22 +25,25 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     # Initializes the CodeQL tools for scanning.
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24
+        cache: pnpm
+
+    - name: Install Dependencies
+      run: pnpm install --frozen-lockfile
+
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
+      uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
-      
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v4
-
-    - name: Install Dependencies
-      run: pnpm install
-      
-    - name: Build for production
-      run: pnpm build
+      uses: github/codeql-action/analyze@v3
