@@ -1,5 +1,4 @@
-.idea
-.DS_Store
 node_modules
-dist/css
-dist/js
+public
+.DS_Store
+.idea

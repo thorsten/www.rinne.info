@@ -186,7 +186,7 @@
   .hero-img {
     position: absolute;
     inset: 0;
-    background-image: url("../../images/slides/01.jpg");
+    background-image: url("/images/slides/01.jpg");
     background-size: cover;
     background-position: center 40%;
     filter: saturate(1.05);

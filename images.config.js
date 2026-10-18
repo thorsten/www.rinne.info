@@ -11,7 +11,7 @@ export default {
       name: "Slider images 1",
 
       /* The source directory in which the script is looking for image files */
-      source: "./src/images/slides",
+      source: "./static/images/slides",
 
       /* Define if the resizing should include files in subdirectories */
       recursive: false,
@@ -84,7 +84,7 @@ export default {
     // Album Images
     {
       name: "Album images",
-      source: "./src/images/album",
+      source: "./static/images/album",
       recursive: false,
       sizes: [
         {

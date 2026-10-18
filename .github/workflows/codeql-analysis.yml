@@ -36,8 +36,11 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
       
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+
     - name: Install Dependencies
-      run: npm install
+      run: pnpm install
       
     - name: Build for production
-      run: npm run build
+      run: pnpm build

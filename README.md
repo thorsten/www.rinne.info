@@ -9,23 +9,23 @@ You need [NodeJS](https://nodejs.org/en/) to be installed on your system. It was
 First, install needed dependencies
 
    ```bash
-   npm install
+   pnpm install
    ```
 
-Then, run webpack
+Then, run Vite
 
    The `dev` command will start a dev server and watch for code changes in JS and SCSS files. Hot reloading is enabled,
    so that any change will be visible in your browser as you type.
 
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
    For production usage, run the `build` command and everything you need gets packed together into the `public`
    directory. You can upload the content to any hosting provider, without further modifications.
 
    ```bash
-   npm run build
+   pnpm build
    ```
 
 ## 3. Credits
