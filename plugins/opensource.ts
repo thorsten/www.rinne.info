@@ -18,10 +18,15 @@ export interface Project {
   since?: number;
   /** Cached from GitHub, updated by the build when reachable. */
   stars?: number;
+  /** Rendered as a wide card with stats instead of a small tile. */
+  featured?: boolean;
+  links?: { label: string; url: string }[];
 }
 
 export interface Contribution {
-  repo: string;
+  /** GitHub "owner/name"; omit for projects hosted elsewhere and set url instead. */
+  repo?: string;
+  url?: string;
   name: string;
   /** What the contribution was about, one short sentence. */
   what: string;
@@ -87,9 +92,36 @@ function renderProject(p: Project, nf: Intl.NumberFormat): string {
         </a>`;
 }
 
+function renderStat(value: string, label: string): string {
+  return `            <div><div class="font-sans text-[clamp(28px,3vw,40px)] leading-none tracking-[-0.02em] text-fg">${value}</div><div class="mt-2 font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">${label}</div></div>`;
+}
+
+function renderFeatured(p: Project, nf: Intl.NumberFormat): string {
+  const links = (p.links ?? [])
+    .map((l) => `<a rel="nofollow" target="_blank" href="${escapeHtml(l.url)}">${escapeHtml(l.label)}</a>`)
+    .join(" · ");
+  const years = p.since ? new Date().getFullYear() - p.since : undefined;
+  return `        <div class="grid gap-10 rounded-card border border-rule-soft bg-bg-elev p-8 md:grid-cols-[1fr_300px] md:p-10">
+          <div class="max-w-[60ch] [&_a]:text-accent [&_a]:no-underline [&_a]:border-b [&_a]:border-accent/40 [&_a:hover]:border-accent">
+            <div class="mb-4 font-mono text-[11px] tracking-[0.1em] uppercase text-accent">${escapeHtml(p.role)}${p.since ? ` · seit ${p.since}` : ""}</div>
+            <h3 class="m-0 mb-4 font-sans font-medium leading-[1.05] tracking-[-0.02em] text-[clamp(32px,4vw,56px)] text-fg">${escapeHtml(p.name)}</h3>
+            <p class="m-0 text-[clamp(16px,1.3vw,19px)] leading-[1.55] text-fg-dim">${escapeHtml(p.description)}</p>
+            ${links ? `<p class="mt-5 mb-0 text-[15px]">${links}</p>` : ""}
+          </div>
+          <div class="grid grid-cols-2 gap-x-6 gap-y-8 self-start border-t border-rule-soft pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-10">
+${renderStat(p.stars !== undefined ? nf.format(p.stars) : "–", "Stars auf GitHub")}
+${renderStat(years !== undefined ? String(years) : "–", "Jahre Entwicklung")}
+          </div>
+        </div>`;
+}
+
 function renderContribution(c: Contribution): string {
+  const href = c.url ?? (c.repo ? `https://github.com/${c.repo}` : undefined);
+  const name = href
+    ? `<a href="${escapeHtml(href)}" rel="nofollow" target="_blank" class="text-fg no-underline hover:text-accent">${escapeHtml(c.name)}</a>`
+    : `<span class="text-fg">${escapeHtml(c.name)}</span>`;
   return `        <li class="grid gap-1 border-t border-rule-soft py-4 text-[15px] md:grid-cols-[260px_1fr] md:gap-6">
-          <a href="https://github.com/${escapeHtml(c.repo)}" rel="nofollow" target="_blank" class="text-fg no-underline hover:text-accent">${escapeHtml(c.name)}</a>
+          ${name}
           <span class="text-fg-dim">${escapeHtml(c.what)}</span>
         </li>`;
 }
@@ -97,11 +129,11 @@ function renderContribution(c: Contribution): string {
 export function renderOpenSource(data: OpenSource): string {
   const nf = new Intl.NumberFormat("de-DE");
   return `      <p class="reveal m-0 mb-12 max-w-[60ch] text-[17px] text-fg-dim">${escapeHtml(data.intro)}</p>
-      <div class="reveal-stagger grid gap-5 md:grid-cols-3">
-${data.projects.map((p) => renderProject(p, nf)).join("\n")}
+      <div class="reveal-stagger grid gap-5 md:grid-cols-3 [&>.featured]:col-span-full">
+${data.projects.map((p) => (p.featured ? `<div class="featured">\n${renderFeatured(p, nf)}\n</div>` : renderProject(p, nf))).join("\n")}
       </div>
       <div class="reveal mt-16 grid items-start gap-10 md:grid-cols-[180px_1fr]">
-        <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">Beiträge</div>
+        <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">Weitere Projekte<br/>&amp; Beiträge</div>
         <ul class="m-0 list-none p-0 border-b border-rule-soft">
 ${data.contributions.map(renderContribution).join("\n")}
         </ul>
