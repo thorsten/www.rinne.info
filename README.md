@@ -39,8 +39,30 @@ src/css/main.css            Tailwind v4 theme and components
 src/js/main.ts              entry point: fonts, CSS, site behaviour
 src/js/site/                nav, theme, scroll, reveal, experience cards
 static/                     copied as-is: favicons, images, robots.txt, sitemap.xml
+content/                    talks, certifications and experience as JSON, see below
+plugins/content.ts          Vite plugin that renders content/ into index.html
 bin/images.ts               responsive image generator, see below
 ```
+
+## Content
+
+Talks, certifications and career stations live in `content/*.json` and are rendered into
+`index.html` at build time by `plugins/content.ts`. The HTML contains placeholders such as
+`<!-- @content talks -->`. Add a new entry to the JSON file, the dev server reloads automatically.
+
+```jsonc
+// content/talks.json
+{
+  "year": 2026,
+  "date": "12. Oktober",
+  "title": "Modernes JS-Tooling für Agentic Coding",
+  "text": "Ganztages-Workshop auf den JavaScript Days 2026 · Berlin, Deutschland",
+  "link": { "label": "JavaScript Days 2026", "url": "https://javascript-days.de/berlin/" }
+}
+```
+
+`link` is optional; its `label` must appear verbatim in `text`. Talks are grouped by year, newest first.
+Certifications are sorted by year, stations by end year with `"to": null` meaning today.
 
 ## Images
 

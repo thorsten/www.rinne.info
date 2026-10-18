@@ -17,5 +17,5 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["src", "bin", "vite.config.ts", "images.config.ts"]
+  "include": ["src", "bin", "plugins", "vite.config.ts", "images.config.ts"]
 }

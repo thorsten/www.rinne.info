@@ -1,0 +1,428 @@
+[
+  {
+    "year": 2026,
+    "date": "12. Oktober",
+    "title": "Modernes JS-Tooling für Agentic Coding",
+    "text": "Ganztages-Workshop auf den JavaScript Days 2026 · Berlin, Deutschland",
+    "link": {
+      "label": "JavaScript Days 2026",
+      "url": "https://javascript-days.de/berlin/"
+    }
+  },
+  {
+    "year": 2026,
+    "date": "23. Juli",
+    "title": "Von Excel zur Web App",
+    "text": "Vortrag beim KI-Stammtisch Augsburg · Augsburg, Deutschland",
+    "link": {
+      "label": "KI-Stammtisch Augsburg",
+      "url": "https://events.maibornwolff.de/ki-stammtisch-augsburg/"
+    }
+  },
+  {
+    "year": 2024,
+    "date": "20. Juni",
+    "title": "Designing with Superpower: Die 10 neuen UX Patterns für AI-gesteuerte Interaktionen",
+    "text": "Vortrag auf der SparksCon 2024 · Augsburg, Deutschland",
+    "link": {
+      "label": "SparksCon 2024",
+      "url": "https://www.sparkscon.de/"
+    }
+  },
+  {
+    "year": 2023,
+    "date": "22. Juni",
+    "title": "Don't Call It Metaverse!",
+    "text": "Masterclass auf der SparksCon 2023 · Augsburg, Deutschland",
+    "link": {
+      "label": "SparksCon 2023",
+      "url": "https://www.sparkscon.de/"
+    }
+  },
+  {
+    "year": 2018,
+    "date": "26. Juni",
+    "title": "Angular Best Practices",
+    "text": "Vortrag auf der Developer Week 2018 · Nürnberg, Deutschland",
+    "link": {
+      "label": "Developer Week 2018",
+      "url": "https://www.developer-week.de/"
+    }
+  },
+  {
+    "year": 2016,
+    "date": "22. März",
+    "title": "Modernisierung von Legacy Applikationen auf HTML5",
+    "text": "Halbtages-Workshop mit Sebastian Springer auf den JavaScript Days 2016 · München, Deutschland",
+    "link": {
+      "label": "JavaScript Days 2016",
+      "url": "https://html5-days.de/"
+    }
+  },
+  {
+    "year": 2015,
+    "date": "06. Okt",
+    "title": "Modernisierung von Legacy Applikationen auf HTML5",
+    "text": "Halbtages-Workshop mit Sebastian Springer auf den HTML5 Days 2015 · Berlin, Deutschland",
+    "link": {
+      "label": "HTML5 Days 2015",
+      "url": "http://html5-days.de/"
+    }
+  },
+  {
+    "year": 2015,
+    "date": "17. Juni",
+    "title": "Company Refactoring",
+    "text": "Vortrag (englisch) auf der Developer Week 2015 · Nürnberg, Deutschland",
+    "link": {
+      "label": "Developer Week 2015",
+      "url": "http://www.developer-week.de/"
+    }
+  },
+  {
+    "year": 2014,
+    "date": "30. Okt",
+    "title": "E-Commerce in schnell mit Symfony2 und Elasticsearch",
+    "text": "Vortrag auf der Symfony Live Berlin 2014",
+    "link": {
+      "label": "Symfony Live Berlin 2014",
+      "url": "http://berlin2014.live.symfony.com/"
+    }
+  },
+  {
+    "year": 2014,
+    "date": "29. Okt",
+    "title": "Full Throttle Refactoring",
+    "text": "Vortrag (englisch) auf der International PHP Conference 2014 · München"
+  },
+  {
+    "year": 2014,
+    "date": "29. Okt",
+    "title": "Symfony2 superschnell mit Elasticsearch",
+    "text": "Vortrag auf der International PHP Conference 2014 · München"
+  },
+  {
+    "year": 2014,
+    "date": "09. Okt",
+    "title": "Company Refactoring",
+    "text": "Vortrag mit Lars Jankowfsky (englisch) auf der code.talks 2014 · Hamburg",
+    "link": {
+      "label": "code.talks 2014",
+      "url": "http://www.codetalks.de/"
+    }
+  },
+  {
+    "year": 2014,
+    "date": "20. Sept",
+    "title": "Full Throttle Refactoring",
+    "text": "Vortrag (englisch) auf der Brno PHP Conference 2014 · Brno, Tschechien",
+    "link": {
+      "label": "Brno PHP Conference 2014",
+      "url": "https://www.brnophp.cz/conference-2014"
+    }
+  },
+  {
+    "year": 2014,
+    "date": "24. Aug",
+    "title": "Full Throttle Refactoring",
+    "text": "Vortrag (englisch) auf der FrOSCon 2014 · St. Augustin"
+  },
+  {
+    "year": 2014,
+    "date": "23. Mai",
+    "title": "FOXX @ Yatego",
+    "text": "Vortrag (englisch) auf der OXID Commons Unconference 2014 · Freiburg"
+  },
+  {
+    "year": 2014,
+    "date": "05. März",
+    "title": "Entwicklung moderner Web-Apps mit HTML5 und JavaScript",
+    "text": "Ganztages-Workshop mit Sebastian Springer · JavaScript Days 2014 · München"
+  },
+  {
+    "year": 2013,
+    "date": "08. Nov",
+    "title": "Bower und Composer — ein Dependency Management Dream Team",
+    "text": "Vortrag auf der Developer Conference Hamburg 2013"
+  },
+  {
+    "year": 2013,
+    "date": "30. Okt",
+    "title": "Modernes Frontend-Development mit Bower, Grunt, Yeoman",
+    "text": "Vortrag auf der International PHP Conference 2013 · München"
+  },
+  {
+    "year": 2013,
+    "date": "27. Okt",
+    "title": "Moderne Web-Apps mit HTML5 und JavaScript",
+    "text": "Ganztages-Workshop mit Sebastian Springer · IPC 2013 · München"
+  },
+  {
+    "year": 2013,
+    "date": "04. Juni",
+    "title": "Bootstrap your Project!",
+    "text": "Vortrag (englisch) auf der IPC 2013 Spring Edition · Berlin"
+  },
+  {
+    "year": 2013,
+    "date": "02. Juni",
+    "title": "Real Time Web Applications mit HTML5 und JavaScript",
+    "text": "Ganztages-Workshop mit Sebastian Springer · IPC 2013 Spring · Berlin"
+  },
+  {
+    "year": 2013,
+    "date": "06. März",
+    "title": "Praktische Umsetzung von Web-Apps",
+    "text": "Halbtages-Workshop mit Sebastian Springer · JavaScript Days 2013 · München"
+  },
+  {
+    "year": 2012,
+    "date": "27. Sept",
+    "title": "Webapplikationen reloaded mit node.js und HTML5",
+    "text": "Ganztages-Workshop mit Sebastian Springer · JavaScript Days 2012 · Berlin"
+  },
+  {
+    "year": 2012,
+    "date": "07. Sept",
+    "title": "Bootstrap your Project!",
+    "text": "Vortrag auf der Developer Conference Hamburg 2012"
+  },
+  {
+    "year": 2012,
+    "date": "18. Aug",
+    "title": "Bootstrap your Project!",
+    "text": "Vortrag auf der PHP Unconference Hamburg 2012"
+  },
+  {
+    "year": 2012,
+    "date": "03. Juni",
+    "title": "HTML5 mit WebSockets und node.js im Einsatz",
+    "text": "Halbtages-Workshop mit Sebastian Springer · IPC 2012 Spring · Berlin"
+  },
+  {
+    "year": 2012,
+    "date": "13. März",
+    "title": "Webapplikationen reloaded mit node.js und HTML5",
+    "text": "Ganztages-Workshop mit Sebastian Springer · JavaScript Days 2012 · Köln"
+  },
+  {
+    "year": 2012,
+    "date": "12. Jan",
+    "title": "One click deployment mit Jenkins",
+    "text": "Münchner Mayflower Donnerstag"
+  },
+  {
+    "year": 2011,
+    "date": "12. Okt",
+    "title": "One click deployment with Jenkins",
+    "text": "Vortrag (englisch) auf der International PHP Conference 2011 · Mainz"
+  },
+  {
+    "year": 2011,
+    "date": "11. Okt",
+    "title": "HTML5",
+    "text": "Vortrag auf der Web Tech Conference 2011 · Mainz"
+  },
+  {
+    "year": 2011,
+    "date": "11. Okt",
+    "title": "Building a cloud based social network with Zend Framework and Doctrine2",
+    "text": "Vortrag (englisch) auf der IPC 2011 · Mainz"
+  },
+  {
+    "year": 2011,
+    "date": "09. Okt",
+    "title": "HTML5 for Developers — The Workshop",
+    "text": "Halbtages-Workshop (englisch) auf der IPC 2011 · Mainz"
+  },
+  {
+    "year": 2011,
+    "date": "20. Mai",
+    "title": "HTML5 for PHP Developers",
+    "text": "Vortrag (englisch) auf der Dutch PHP Conference 2011 · Amsterdam"
+  },
+  {
+    "year": 2011,
+    "date": "22. März",
+    "title": "Continuous Improvement mit PHP_CodeBrowser und Cinder",
+    "text": "PHP Summit 2011 · München"
+  },
+  {
+    "year": 2011,
+    "date": "25. Feb",
+    "title": "Continuous Improvement in PHP Projects",
+    "text": "Vortrag (englisch) auf der PHP UK Conference 2011 · London"
+  },
+  {
+    "year": 2010,
+    "date": "29. Okt",
+    "title": "Continuous Improvement in PHP Projects",
+    "text": "Vortrag (englisch) auf der PHP Barcelona Conference 2010"
+  },
+  {
+    "year": 2010,
+    "date": "14. Okt",
+    "title": "Using Git in PHP Projects",
+    "text": "Halbtages-Workshop mit Nils Adermann (englisch) auf der IPC 2010 · Mainz"
+  },
+  {
+    "year": 2010,
+    "date": "12. Okt",
+    "title": "Continuous Improvement in PHP Projects",
+    "text": "Vortrag (englisch) auf der IPC 2010 · Mainz"
+  },
+  {
+    "year": 2010,
+    "date": "11. Okt",
+    "title": "HTML5 for PHP Developers",
+    "text": "Vortrag (englisch) auf der IPC 2010 · Mainz"
+  },
+  {
+    "year": 2010,
+    "date": "25. Sept",
+    "title": "HTML5 für PHP Developer",
+    "text": "Vortrag auf der PHP Unconference Hamburg 2010"
+  },
+  {
+    "year": 2010,
+    "date": "12. Juni",
+    "title": "iPhone Apps with HTML5",
+    "text": "Vortrag (englisch) auf der Dutch PHP Conference 2010 · Amsterdam"
+  },
+  {
+    "year": 2010,
+    "date": "11. Juni",
+    "title": "Agile PHP Software Development",
+    "text": "Vortrag (englisch) auf der Dutch PHP Conference 2010 · Amsterdam"
+  },
+  {
+    "year": 2010,
+    "date": "01. Juni",
+    "title": "Agile PHP Software Development",
+    "text": "Vortrag auf der IPC 2010 Spring Edition · Berlin"
+  },
+  {
+    "year": 2010,
+    "date": "01. Mai",
+    "title": "Scrum Panel",
+    "text": "Panel-Diskussion mit Sebastian Schürmann · PHP Barcamp AT · Salzburg, Österreich"
+  },
+  {
+    "year": 2009,
+    "date": "16. Nov",
+    "title": "Fix Your Architecture!",
+    "text": "Vortrag (englisch) auf der International PHP Conference 2009 · Karlsruhe"
+  },
+  {
+    "year": 2009,
+    "date": "15. Nov",
+    "title": "Unittesting für Dummies",
+    "text": "Ganztages-Workshop mit Lars Jankowfsky · IPC 2009 · Karlsruhe"
+  },
+  {
+    "year": 2009,
+    "date": "27. Mai",
+    "title": "Framework? No thank you, I will use my own!",
+    "text": "Vortrag mit Lars Jankowfsky (englisch) · IPC 2009 Spring Edition · Berlin"
+  },
+  {
+    "year": 2009,
+    "date": "26. Mai",
+    "title": "Professional Refactoring",
+    "text": "Vortrag (englisch) · IPC 2009 Spring Edition · Berlin"
+  },
+  {
+    "year": 2009,
+    "date": "25. Mai",
+    "title": "Refactor it! A practical journey into the test driven world",
+    "text": "Ganztages-Workshop mit Lars Jankowfsky (englisch) · IPC 2009 Spring · Berlin"
+  },
+  {
+    "year": 2008,
+    "date": "30. Okt",
+    "title": "Quality in PHP projects beyond Unittests",
+    "text": "Vortrag (englisch) auf der International PHP Conference 2008 · Mainz"
+  },
+  {
+    "year": 2008,
+    "date": "27. Okt",
+    "title": "Theory and practice — migrating your legacy code into modern test driven development",
+    "text": "Ganztages-Workshop mit Lars Jankowfsky (englisch) · IPC 2008 · Mainz"
+  },
+  {
+    "year": 2008,
+    "date": "27. Mai",
+    "title": "Stateless SOAP Webservices with Java and PHP",
+    "text": "Vortrag (englisch) · Dynamic Languages World Europe 2008 · Karlsruhe"
+  },
+  {
+    "year": 2008,
+    "date": "27. Mai",
+    "title": "Migration concepts for Enterprise PHP applications",
+    "text": "Vortrag (englisch) · DLW Europe 2008 · Karlsruhe"
+  },
+  {
+    "year": 2008,
+    "date": "26. Mai",
+    "title": "Agility and Quality",
+    "text": "Ganztages-Workshop mit Johann-Peter Hartmann (englisch) · DLW Europe 2008 · Karlsruhe"
+  },
+  {
+    "year": 2007,
+    "date": "07. Nov",
+    "title": "Office Automatisation mit PHP",
+    "text": "Vortrag auf der International PHP Conference 2007 · Frankfurt/Main"
+  },
+  {
+    "year": 2007,
+    "date": "09. Okt",
+    "title": "IBM DB2 with PHP 5.2 and AJAX",
+    "text": "Vortrag (englisch) auf der Zend Conference 2007 · San Francisco, USA"
+  },
+  {
+    "year": 2007,
+    "date": "23. Mai",
+    "title": "IBM DB2 mit PHP 5.2 und AJAX",
+    "text": "Vortrag auf der IPC 2007 Spring Edition · Ludwigsburg"
+  },
+  {
+    "year": 2007,
+    "date": "06. Mai",
+    "title": "Enterprise PHP",
+    "text": "Vortrag und Diskussion auf der PHP Unconference 2007 · Hamburg"
+  },
+  {
+    "year": 2007,
+    "date": "05. Mai",
+    "title": "Chorizo! Web Security on the fly",
+    "text": "Vortrag und Diskussion auf der PHP Unconference 2007 · Hamburg"
+  },
+  {
+    "year": 2006,
+    "date": "07. Dez",
+    "title": "PHP 5 and IBM DB2",
+    "text": "Vortrag (englisch) auf der Open Source Developer Conference 2006 · Melbourne, Australien"
+  },
+  {
+    "year": 2006,
+    "date": "06. Dez",
+    "title": "Enterprise PHP",
+    "text": "Vortrag (englisch) auf der OSDC 2006 · Melbourne, Australien"
+  },
+  {
+    "year": 2006,
+    "date": "08. Nov",
+    "title": "Einführung in PHP 5 und IBM DB2",
+    "text": "Vortrag auf der International PHP Conference 2006 · Frankfurt/Main"
+  },
+  {
+    "year": 2005,
+    "date": "24. Juni",
+    "title": "Accessibility in phpMyFAQ",
+    "text": "Vortrag in der LAMPArea auf dem LinuxTag 2005 · Karlsruhe",
+    "link": {
+      "label": "LinuxTag 2005",
+      "url": "http://www.linuxtag.org/2005/"
+    }
+  }
+]

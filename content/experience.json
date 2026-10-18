@@ -1,0 +1,38 @@
+[
+  {
+    "from": 2015,
+    "to": null,
+    "company": "MaibornWolff GmbH",
+    "role": "Technical Head of Smart Energy und Partner",
+    "city": "Augsburg",
+    "country": "Deutschland",
+    "detail": "Projektleiter und Software-Architekt in Projekten bei Kunden wie STIHL, Lechwerke, HVV, Bayernwerk, Lichtblick, Flughafen München, PAYBACK, SMA Solar Technology AG und Volkswagen. Fokus auf Web Platform Development in der Energie-Branche, Continuous Integration sowie DevOps."
+  },
+  {
+    "from": 2012,
+    "to": 2015,
+    "company": "Yatego GmbH",
+    "role": "Team Lead Engineering",
+    "city": "München",
+    "country": "Deutschland",
+    "detail": "Verantwortlich für das Refactoring der Shopping-Plattform Yatego mit der Migration von PHP 4.4 auf PHP 5.4, von MySQL 4.1 auf MySQL 5.5 und Percona Server 5.6. Entwicklung des neuen Frontends auf Basis von Symfony 2 und Elasticsearch, Varnish und nginx. Aufbau des unternehmensweiten Dashboards mit allen relevanten KPIs in Echtzeit."
+  },
+  {
+    "from": 2004,
+    "to": 2012,
+    "company": "Mayflower GmbH",
+    "role": "Senior Developer and Team Lead",
+    "city": "München",
+    "country": "Deutschland",
+    "detail": "Betreuung von Projekten bei Kunden wie HypoVereinsbank AG, Unicredit, CIAO, mapolis AG und M-net. Projektgrößen von Personenwochen bis mehreren Personenjahren mit PHP 4 und PHP 5, MySQL 4 und MySQL 5, Solr, Memcached, Varnish, Apache, nginx und vieles mehr."
+  },
+  {
+    "from": 2003,
+    "to": 2004,
+    "company": "Böwe Systec AG",
+    "role": "Diplomand",
+    "city": "Augsburg",
+    "country": "Deutschland",
+    "detail": "Thema der Arbeit: »Konzeption und Realisierung eines Prototypen für ein webbasiertes Produktions­planungs- und -steuerungs-System für Hochleistungskuvertierer« — Note 1,3."
+  }
+]

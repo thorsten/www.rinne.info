@@ -1,9 +1,10 @@
 import { resolve } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
+import { contentPlugin } from "./plugins/content.ts";
 
 export default defineConfig({
-  plugins: [tailwindcss()],
+  plugins: [tailwindcss(), contentPlugin()],
   publicDir: "static",
   build: {
     outDir: "public",
