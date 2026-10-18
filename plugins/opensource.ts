@@ -18,6 +18,8 @@ export interface Project {
   since?: number;
   /** Cached from GitHub, updated by the build when reachable. */
   stars?: number;
+  /** Number of stable release tags (plain semver, no nightlies or pre-releases), cached like stars. */
+  releases?: number;
   /** Rendered as a wide card with stats instead of a small tile. */
   featured?: boolean;
   links?: { label: string; url: string }[];
@@ -41,14 +43,24 @@ export interface OpenSource {
 
 const TIMEOUT_MS = 5000;
 
-async function fetchStars(repo: string, signal: AbortSignal): Promise<number> {
-  const res = await fetch(`https://api.github.com/repos/${repo}`, {
+const STABLE_TAG = /^v?\d+\.\d+(\.\d+)?$/;
+
+async function fetchJson(url: string, signal: AbortSignal): Promise<unknown> {
+  const res = await fetch(url, {
     signal,
     headers: { Accept: "application/vnd.github+json", "User-Agent": "rinne.info build" },
   });
-  if (!res.ok) throw new Error(`${repo}: ${res.status}`);
-  const data = (await res.json()) as { stargazers_count: number };
-  return data.stargazers_count;
+  if (!res.ok) throw new Error(`${url}: ${res.status}`);
+  return res.json();
+}
+
+async function fetchGitHub(repo: string, signal: AbortSignal): Promise<{ stars: number; releases: number }> {
+  const [info, refs] = (await Promise.all([
+    fetchJson(`https://api.github.com/repos/${repo}`, signal),
+    fetchJson(`https://api.github.com/repos/${repo}/git/matching-refs/tags/`, signal),
+  ])) as [{ stargazers_count: number }, { ref: string }[]];
+  const releases = refs.filter((r) => STABLE_TAG.test(r.ref.replace("refs/tags/", ""))).length;
+  return { stars: info.stargazers_count, releases };
 }
 
 export async function loadOpenSource(file: string): Promise<OpenSource> {
@@ -56,12 +68,14 @@ export async function loadOpenSource(file: string): Promise<OpenSource> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const stars = await Promise.all(data.projects.map((p) => fetchStars(p.repo, controller.signal)));
+    const live = await Promise.all(data.projects.map((p) => fetchGitHub(p.repo, controller.signal)));
     let changed = false;
     data.projects.forEach((p, i) => {
-      const count = stars[i];
-      if (count !== undefined && p.stars !== count) {
-        p.stars = count;
+      const fresh = live[i];
+      if (!fresh) return;
+      if (p.stars !== fresh.stars || p.releases !== fresh.releases) {
+        p.stars = fresh.stars;
+        p.releases = fresh.releases;
         changed = true;
       }
     });
@@ -70,7 +84,7 @@ export async function loadOpenSource(file: string): Promise<OpenSource> {
       fs.writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`);
     }
   } catch (error) {
-    console.warn(`[content] GitHub stars unavailable, using cache from ${data.fetchedAt ?? "?"}: ${String(error)}`);
+    console.warn(`[content] GitHub data unavailable, using cache from ${data.fetchedAt ?? "?"}: ${String(error)}`);
   } finally {
     clearTimeout(timer);
   }
@@ -96,7 +110,7 @@ function renderStat(value: string, label: string): string {
   return `            <div><div class="font-sans text-[clamp(28px,3vw,40px)] leading-none tracking-[-0.02em] text-fg">${value}</div><div class="mt-2 font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">${label}</div></div>`;
 }
 
-function renderFeatured(p: Project, nf: Intl.NumberFormat): string {
+function renderFeatured(p: Project): string {
   const links = (p.links ?? [])
     .map((l) => `<a rel="nofollow" target="_blank" href="${escapeHtml(l.url)}">${escapeHtml(l.label)}</a>`)
     .join(" · ");
@@ -109,7 +123,7 @@ function renderFeatured(p: Project, nf: Intl.NumberFormat): string {
             ${links ? `<p class="mt-5 mb-0 text-[15px]">${links}</p>` : ""}
           </div>
           <div class="grid grid-cols-2 gap-x-6 gap-y-8 self-start border-t border-rule-soft pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-10">
-${renderStat(p.stars !== undefined ? nf.format(p.stars) : "–", "Stars auf GitHub")}
+${renderStat(p.releases !== undefined ? `${Math.floor(p.releases / 10) * 10}+` : "–", "Releases")}
 ${renderStat(years !== undefined ? String(years) : "–", "Jahre Entwicklung")}
           </div>
         </div>`;
@@ -130,7 +144,7 @@ export function renderOpenSource(data: OpenSource): string {
   const nf = new Intl.NumberFormat("de-DE");
   return `      <p class="reveal m-0 mb-12 max-w-[60ch] text-[17px] text-fg-dim">${escapeHtml(data.intro)}</p>
       <div class="reveal-stagger grid gap-5 md:grid-cols-3 [&>.featured]:col-span-full">
-${data.projects.map((p) => (p.featured ? `<div class="featured">\n${renderFeatured(p, nf)}\n</div>` : renderProject(p, nf))).join("\n")}
+${data.projects.map((p) => (p.featured ? `<div class="featured">\n${renderFeatured(p)}\n</div>` : renderProject(p, nf))).join("\n")}
       </div>
       <div class="reveal mt-16 grid items-start gap-10 md:grid-cols-[180px_1fr]">
         <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">Weitere Projekte<br/>&amp; Beiträge</div>
