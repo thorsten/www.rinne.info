@@ -16,7 +16,9 @@ pnpm build      # production build into public/
 pnpm preview    # serve the production build locally
 ```
 
-`public/` is generated and git-ignored. Upload its content to any static host.
+`public/` is generated and git-ignored. Upload its content including the generated `.htaccess` to the
+All-Inkl webspace. The `.htaccess` sets HTTPS redirect, caching, compression and security headers; the
+Content-Security-Policy hash for the inline theme script is computed at build time.
 
 ## Quality checks
 
@@ -41,6 +43,7 @@ src/js/site/                nav, theme, scroll, reveal, experience cards
 static/                     copied as-is: favicons, images, robots.txt, sitemap.xml
 content/                    talks, certifications, experience and photos as JSON, see below
 plugins/content.ts          Vite plugin that renders content/ into index.html
+plugins/htaccess.ts         writes public/.htaccess (headers, caching, CSP) from htaccess.template
 bin/images.ts               responsive image generator, see below
 ```
 
