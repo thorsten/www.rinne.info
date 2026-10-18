@@ -43,15 +43,61 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Thorsten Rinne",
-  "url": "https://rinne.info/",
-  "image": "https://rinne.info/images/og.jpg",
-  "email": "mailto:thorsten@rinne.info",
-  "jobTitle": "Technical Head of Smart Energy, Partner",
-  "worksFor": { "@type": "Organization", "name": "MaibornWolff GmbH", "url": "https://www.maibornwolff.de" },
-  "address": { "@type": "PostalAddress", "addressLocality": "Schwabmünchen", "addressCountry": "DE" },
-  "sameAs": ["https://github.com/thorsten", "https://www.phpmyfaq.de"]
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://rinne.info/#person",
+      "name": "Thorsten Rinne",
+      "givenName": "Thorsten",
+      "familyName": "Rinne",
+      "url": "https://rinne.info/",
+      "image": "https://rinne.info/images/og.jpg",
+      "email": "mailto:thorsten@rinne.info",
+      "jobTitle": "Technical Head of Smart Energy, Partner",
+      "description": "Web Engineer, Open-Source-Entwickler, Technical Head of Smart Energy und Partner bei MaibornWolff in Augsburg.",
+      "worksFor": { "@type": "Organization", "name": "MaibornWolff GmbH", "url": "https://www.maibornwolff.de" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Fachhochschule Augsburg", "url": "https://www.tha.de" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Schwabmünchen", "postalCode": "86830", "addressCountry": "DE" },
+      "nationality": { "@type": "Country", "name": "Deutschland" },
+      "knowsLanguage": ["de", "en"],
+      "knowsAbout": ["Web Engineering", "PHP", "TypeScript", "Open Source", "phpMyFAQ", "Smart Energy", "Agentic Coding", "UX"],
+      "sameAs": [
+        "https://github.com/thorsten",
+        "https://www.linkedin.com/in/thorsten-rinne/",
+        "https://bsky.app/profile/thorsten.rinne.social",
+        "https://www.phpmyfaq.de"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://rinne.info/#website",
+      "url": "https://rinne.info/",
+      "name": "Thorsten Rinne",
+      "inLanguage": "de",
+      "author": { "@id": "https://rinne.info/#person" },
+      "publisher": { "@id": "https://rinne.info/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://rinne.info/#page",
+      "url": "https://rinne.info/",
+      "name": "Thorsten Rinne — rinne.info",
+      "inLanguage": "de",
+      "isPartOf": { "@id": "https://rinne.info/#website" },
+      "mainEntity": { "@id": "https://rinne.info/#person" },
+      "primaryImageOfPage": "https://rinne.info/images/og.jpg"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://www.phpmyfaq.de/#software",
+      "name": "phpMyFAQ",
+      "url": "https://www.phpmyfaq.de",
+      "codeRepository": "https://github.com/thorsten/phpMyFAQ",
+      "programmingLanguage": "PHP",
+      "license": "https://www.mozilla.org/MPL/2.0/",
+      "author": { "@id": "https://rinne.info/#person" }
+    }
+  ]
 }
 </script>
 </head>
@@ -223,47 +269,8 @@
       </h2>
     </div>
     <div class="reveal max-w-[60ch] text-[17px] text-fg-dim">Wenn ich nicht programmiere, bin ich meist mit der Kamera unterwegs — Island, Australien, Neuseeland, Alpen, USA. Ein Auszug:</div>
-    <div class="reveal-stagger mt-14 grid gap-3.5 grid-cols-2 grid-rows-[240px_240px_240px] md:grid-cols-[1.6fr_1fr_1fr] md:grid-rows-[300px_300px]">
-      <div class="ph relative col-span-2 row-start-1 overflow-hidden rounded-card border border-rule-soft bg-bg-elev md:col-span-1 md:row-span-2">
-        <picture>
-          <source type="image/avif" srcset="/images/reisen/11-600.avif 600w, /images/reisen/11-1100.avif 1100w" sizes="(min-width: 768px) 40vw, 100vw">
-          <source type="image/webp" srcset="/images/reisen/11-600.webp 600w, /images/reisen/11-1100.webp 1100w" sizes="(min-width: 768px) 40vw, 100vw">
-          <img class="ph-img" src="/images/reisen/11-1100.webp" alt="Skógafoss-Wasserfall, Island" loading="lazy" decoding="async">
-        </picture>
-        <div class="absolute inset-x-4 bottom-3.5 z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Skógafoss · IS</span><span class="text-white/60">08 / 2020</span></div>
-      </div>
-      <div class="ph relative overflow-hidden rounded-card border border-rule-soft bg-bg-elev">
-        <picture>
-          <source type="image/avif" srcset="/images/reisen/10-600.avif 600w, /images/reisen/10-1100.avif 1100w" sizes="(min-width: 768px) 40vw, 100vw">
-          <source type="image/webp" srcset="/images/reisen/10-600.webp 600w, /images/reisen/10-1100.webp 1100w" sizes="(min-width: 768px) 40vw, 100vw">
-          <img class="ph-img" src="/images/reisen/10-1100.webp" alt="Sextner Dolomiten, Südtirol" loading="lazy" decoding="async">
-        </picture>
-        <div class="absolute inset-x-4 bottom-3.5 z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Sextner Dolomiten · IT</span><span class="text-white/60">06 / 2022</span></div>
-      </div>
-      <div class="ph relative overflow-hidden rounded-card border border-rule-soft bg-bg-elev">
-        <picture>
-          <source type="image/avif" srcset="/images/reisen/02-600.avif 600w, /images/reisen/02-1100.avif 1100w" sizes="(min-width: 768px) 40vw, 100vw">
-          <source type="image/webp" srcset="/images/reisen/02-600.webp 600w, /images/reisen/02-1100.webp 1100w" sizes="(min-width: 768px) 40vw, 100vw">
-          <img class="ph-img" src="/images/reisen/02-1100.webp" alt="Whitehaven Beach, Australien" loading="lazy" decoding="async">
-        </picture>
-        <div class="absolute inset-x-4 bottom-3.5 z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Whitehaven Beach · AU</span><span class="text-white/60">12 / 2006</span></div>
-      </div>
-      <div class="ph relative overflow-hidden rounded-card border border-rule-soft bg-bg-elev">
-        <picture>
-          <source type="image/avif" srcset="/images/reisen/08-600.avif 600w, /images/reisen/08-1100.avif 1100w" sizes="(min-width: 768px) 40vw, 100vw">
-          <source type="image/webp" srcset="/images/reisen/08-600.webp 600w, /images/reisen/08-1100.webp 1100w" sizes="(min-width: 768px) 40vw, 100vw">
-          <img class="ph-img" src="/images/reisen/08-1100.webp" alt="Yosemite-Nationalpark, USA" loading="lazy" decoding="async">
-        </picture>
-        <div class="absolute inset-x-4 bottom-[14px] z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Yosemite · USA</span><span class="text-white/60">03 / 2013</span></div>
-      </div>
-      <div class="ph relative overflow-hidden rounded-card border border-rule-soft bg-bg-elev">
-        <picture>
-          <source type="image/avif" srcset="/images/reisen/09-600.avif 600w, /images/reisen/09-1100.avif 1100w" sizes="(min-width: 768px) 40vw, 100vw">
-          <source type="image/webp" srcset="/images/reisen/09-600.webp 600w, /images/reisen/09-1100.webp 1100w" sizes="(min-width: 768px) 40vw, 100vw">
-          <img class="ph-img" src="/images/reisen/09-1100.webp" alt="Cap Dramont an der Côte d’Azur, Frankreich" loading="lazy" decoding="async">
-        </picture>
-        <div class="absolute inset-x-4 bottom-3.5 z-2 flex justify-between gap-3 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>Cap Dramont · FR</span><span class="text-white/60">08 / 2022</span></div>
-      </div>
+    <div class="reveal-stagger mt-14 grid gap-3.5 grid-cols-2 auto-rows-[200px] md:grid-cols-4 md:auto-rows-[260px]">
+      <!-- @content photos -->
     </div>
   </section>
 

@@ -422,6 +422,24 @@
   .reveal-stagger.in > *:nth-child(6) {
     transition-delay: 0.4s;
   }
+  .reveal-stagger.in > *:nth-child(7) {
+    transition-delay: 0.47s;
+  }
+  .reveal-stagger.in > *:nth-child(8) {
+    transition-delay: 0.54s;
+  }
+  .reveal-stagger.in > *:nth-child(9) {
+    transition-delay: 0.61s;
+  }
+  .reveal-stagger.in > *:nth-child(10) {
+    transition-delay: 0.68s;
+  }
+  .reveal-stagger.in > *:nth-child(11) {
+    transition-delay: 0.75s;
+  }
+  .reveal-stagger.in > *:nth-child(12) {
+    transition-delay: 0.82s;
+  }
 }
 
 @layer components {

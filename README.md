@@ -39,14 +39,14 @@ src/css/main.css            Tailwind v4 theme and components
 src/js/main.ts              entry point: fonts, CSS, site behaviour
 src/js/site/                nav, theme, scroll, reveal, experience cards
 static/                     copied as-is: favicons, images, robots.txt, sitemap.xml
-content/                    talks, certifications and experience as JSON, see below
+content/                    talks, certifications, experience and photos as JSON, see below
 plugins/content.ts          Vite plugin that renders content/ into index.html
 bin/images.ts               responsive image generator, see below
 ```
 
 ## Content
 
-Talks, certifications and career stations live in `content/*.json` and are rendered into
+Talks, certifications, career stations and the travel gallery live in `content/*.json` and are rendered into
 `index.html` at build time by `plugins/content.ts`. The HTML contains placeholders such as
 `<!-- @content talks -->`. Add a new entry to the JSON file, the dev server reloads automatically.
 
@@ -63,6 +63,8 @@ Talks, certifications and career stations live in `content/*.json` and are rende
 
 `link` is optional; its `label` must appear verbatim in `text`. Talks are grouped by year, newest first.
 Certifications are sorted by year, stations by end year with `"to": null` meaning today.
+Photos (`content/photos.json`) are shown in file order, the first one large. `file` is the base name under
+`static/images/reisen/`, which needs `<file>-600` and `<file>-1100` as `.avif` and `.webp`.
 
 ## Images
 

@@ -29,6 +29,16 @@ export interface Certification {
   title: string;
 }
 
+export interface Photo {
+  /** Base name under static/images/reisen/, e.g. "11" for 11-600.avif, 11-1100.webp. */
+  file: string;
+  alt: string;
+  /** Caption, e.g. "Skógafoss · IS". */
+  place: string;
+  /** Optional, e.g. "08 / 2020". */
+  date?: string;
+}
+
 export interface Experience {
   from: number;
   /** null means "heute". */
@@ -112,12 +122,32 @@ export function renderExperience(experience: readonly Experience[]): string {
     .join("\n\n");
 }
 
+export function renderPhotos(photos: readonly Photo[]): string {
+  return photos
+    .map((p, i) => {
+      const base = `/images/reisen/${encodeURIComponent(p.file)}`;
+      const sizes = i === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw";
+      const span = i === 0 ? " col-span-2 md:col-span-1 md:row-span-2" : "";
+      const date = p.date ? `<span class="hidden text-white/60 sm:inline">${escapeHtml(p.date)}</span>` : "";
+      return `      <figure class="ph relative m-0 overflow-hidden rounded-card border border-rule-soft bg-bg-elev${span}">
+        <picture>
+          <source type="image/avif" srcset="${base}-600.avif 600w, ${base}-1100.avif 1100w" sizes="${sizes}">
+          <source type="image/webp" srcset="${base}-600.webp 600w, ${base}-1100.webp 1100w" sizes="${sizes}">
+          <img class="ph-img" src="${base}-1100.webp" alt="${escapeHtml(p.alt)}" loading="lazy" decoding="async">
+        </picture>
+        <figcaption class="absolute inset-x-4 bottom-3.5 z-2 flex flex-wrap justify-between gap-x-3 gap-y-1 font-mono text-[10px] tracking-[0.12em] uppercase text-white/95"><span>${escapeHtml(p.place)}</span>${date}</figcaption>
+      </figure>`;
+    })
+    .join("\n");
+}
+
 type Renderer = (data: never) => string;
 
 const SECTIONS: Record<string, { file: string; render: Renderer }> = {
   talks: { file: "talks.json", render: renderTalks as Renderer },
   certifications: { file: "certifications.json", render: renderCertifications as Renderer },
   experience: { file: "experience.json", render: renderExperience as Renderer },
+  photos: { file: "photos.json", render: renderPhotos as Renderer },
 };
 
 function readJson(file: string): unknown {
