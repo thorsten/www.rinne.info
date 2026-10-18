@@ -33,7 +33,13 @@
     "date": "08 / 2026",
     "size": "large"
   },
-  { "file": "14", "alt": "Bergpanorama bei Welschnofen, Südtirol", "place": "Welschnofen · IT", "date": "06 / 2026", "size": "wide" },
+  {
+    "file": "14",
+    "alt": "Bergpanorama bei Welschnofen, Südtirol",
+    "place": "Welschnofen · IT",
+    "date": "06 / 2026",
+    "size": "wide"
+  },
   {
     "file": "03",
     "alt": "Marlborough Sounds, Neuseeland",
