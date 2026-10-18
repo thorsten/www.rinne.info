@@ -1,0 +1,78 @@
+{
+  "intro": "Open Source ist für mich seit 2001 der Normalfall: eigene Projekte pflegen, Bugs in Werkzeugen fixen, die ich selbst benutze, und Dokumentation verbessern, wo ich hängen geblieben bin.",
+  "projects": [
+    {
+      "repo": "thorsten/phpMyFAQ",
+      "name": "phpMyFAQ",
+      "role": "Maintainer",
+      "description": "Mehrsprachiges FAQ-System für PHP 8 mit MySQL, PostgreSQL und SQLite. Mein Hauptprojekt, in über 40 Sprachen übersetzt, lizenziert unter MPL 2.0.",
+      "url": "https://www.phpmyfaq.de",
+      "since": 2001,
+      "stars": 621
+    },
+    {
+      "repo": "thorsten/sunnyportal-csv-downloader",
+      "name": "Sunny Portal CSV Downloader",
+      "role": "Autor",
+      "description": "Lädt Erzeugungsdaten einer SMA-Photovoltaikanlage als CSV aus dem Sunny Portal, für eigene Auswertungen und Home Assistant.",
+      "since": 2023,
+      "stars": 5
+    },
+    {
+      "repo": "thorsten/Voltopia",
+      "name": "Voltopia",
+      "role": "Autor",
+      "description": "Low-Poly-Städtebau im Browser, bei dem das Stromnetz das Spiel ist: Solar, Wind und Speicher so ausbalancieren, dass die Stadt läuft.",
+      "since": 2025,
+      "stars": 3
+    }
+  ],
+  "contributions": [
+    {
+      "repo": "MaibornWolff/codecharta",
+      "name": "CodeCharta",
+      "what": "Visualisierung von Code-Metriken als 3D-Stadt, Beiträge zur Analyse und zum Frontend."
+    },
+    {
+      "repo": "home-assistant/home-assistant.io",
+      "name": "Home Assistant",
+      "what": "Dokumentation für Integrationen, die ich selbst im Einsatz habe."
+    },
+    {
+      "repo": "pail23/stiebel_eltron_isg_component",
+      "name": "Stiebel Eltron ISG für Home Assistant",
+      "what": "Fixes und Erweiterungen für die Wärmepumpen-Integration."
+    },
+    {
+      "repo": "PiotrMachowski/lovelace-xiaomi-vacuum-map-card",
+      "name": "Xiaomi Vacuum Map Card",
+      "what": "Verbesserungen an der Lovelace-Karte für Saugroboter."
+    },
+    {
+      "repo": "tecnickcom/TCPDF",
+      "name": "TCPDF",
+      "what": "PDF-Bibliothek für PHP, die phpMyFAQ für den Export nutzt."
+    },
+    {
+      "repo": "ngx-translate/core",
+      "name": "ngx-translate",
+      "what": "Internationalisierung für Angular."
+    },
+    {
+      "repo": "carthage-software/mago",
+      "name": "Mago",
+      "what": "PHP-Linter und Formatter in Rust."
+    },
+    {
+      "repo": "AdventurePHP/code",
+      "name": "Adventure PHP Framework",
+      "what": "Beiträge zum Framework-Kern."
+    },
+    {
+      "repo": "openhab/openhab-docs",
+      "name": "openHAB",
+      "what": "Dokumentation."
+    }
+  ],
+  "fetchedAt": "2026-10-18"
+}

@@ -4,6 +4,7 @@ import "@fontsource-variable/jetbrains-mono/wght.css";
 import "../css/main.css";
 
 import { initExperienceCards } from "./site/experience";
+import { initLightbox } from "./site/lightbox";
 import { initNav } from "./site/nav";
 import { initReveal } from "./site/reveal";
 import { initScroll } from "./site/scroll";
@@ -15,4 +16,5 @@ initNav();
 initScroll();
 initReveal();
 initExperienceCards();
+initLightbox();
 initSince();

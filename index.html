@@ -113,6 +113,7 @@
     <a href="#profil" data-section="profil" class="nav-link">Profil</a>
     <a href="#studium" data-section="studium" class="nav-link">Ausbildung</a>
     <a href="#erfahrung" data-section="erfahrung" class="nav-link">Erfahrung</a>
+    <a href="#opensource" data-section="opensource" class="nav-link">Open Source</a>
     <a href="#reisen" data-section="reisen" class="nav-link">Reisen</a>
     <a href="#talks" data-section="talks" class="nav-link">Talks</a>
     <a href="#kontakt" data-section="kontakt" class="nav-link">Kontakt</a>
@@ -197,11 +198,11 @@
         <div class="font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">Jahre mit phpMyFAQ</div>
       </div>
       <div class="stat">
-        <div class="m-0 mb-2 font-sans leading-none tracking-[-0.02em] text-[clamp(38px,4vw,56px)]"><em class="not-italic text-accent">7</em></div>
+        <div class="m-0 mb-2 font-sans leading-none tracking-[-0.02em] text-[clamp(38px,4vw,56px)]"><em class="not-italic text-accent">{{count:certifications}}</em></div>
         <div class="font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">Zertifizierungen</div>
       </div>
       <div class="stat">
-        <div class="m-0 mb-2 font-sans leading-none tracking-[-0.02em] text-[clamp(38px,4vw,56px)]"><em class="not-italic text-accent">4</em></div>
+        <div class="m-0 mb-2 font-sans leading-none tracking-[-0.02em] text-[clamp(38px,4vw,56px)]"><em class="not-italic text-accent">{{count:experience}}</em></div>
         <div class="font-mono text-[11px] tracking-[0.08em] uppercase text-fg-muted">Stationen</div>
       </div>
     </div>
@@ -264,10 +265,24 @@
     </div>
   </section>
 
+  <section id="opensource" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
+    <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
+      <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
+        <span class="text-accent">●</span> 04 &nbsp;/&nbsp; Open Source
+      </div>
+      <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
+        Open Source<br/><em class="not-italic font-normal text-accent">seit 2001.</em>
+      </h2>
+    </div>
+    <div>
+      <!-- @content opensource -->
+    </div>
+  </section>
+
   <section id="reisen" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
-        <span class="text-accent">●</span> 04 &nbsp;/&nbsp; Reisen
+        <span class="text-accent">●</span> 05 &nbsp;/&nbsp; Reisen
       </div>
       <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
         Fotografie<br/><em class="not-italic font-normal text-accent">unterwegs.</em>
@@ -277,12 +292,30 @@
     <div class="reveal-stagger mt-14 grid grid-flow-dense gap-3.5 grid-cols-2 auto-rows-[200px] md:grid-cols-4 md:auto-rows-[260px]">
       <!-- @content photos -->
     </div>
+    <dialog id="lightbox" class="lightbox" aria-label="Foto in groß">
+      <button type="button" class="lightbox-close icon-btn" data-close aria-label="Schließen">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <button type="button" class="lightbox-nav icon-btn" data-prev aria-label="Vorheriges Foto">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <figure class="m-0 flex flex-col items-center gap-3">
+        <picture>
+          <source type="image/avif" srcset="">
+          <img alt="" decoding="async">
+        </picture>
+        <figcaption class="font-mono text-[11px] tracking-[0.12em] uppercase text-white/80"></figcaption>
+      </figure>
+      <button type="button" class="lightbox-nav icon-btn" data-next aria-label="Nächstes Foto">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </dialog>
   </section>
 
   <section id="hobbies" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
-        <span class="text-accent">●</span> 05 &nbsp;/&nbsp; Nebensachen
+        <span class="text-accent">●</span> 06 &nbsp;/&nbsp; Nebensachen
       </div>
       <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
         Was ich sonst<br/><em class="not-italic font-normal text-accent">so mache.</em>
@@ -315,7 +348,7 @@
   <section id="talks" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
-        <span class="text-accent">●</span> 06 &nbsp;/&nbsp; Talks
+        <span class="text-accent">●</span> 07 &nbsp;/&nbsp; Talks
       </div>
       <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
         Vorträge &amp;<br/><em class="not-italic font-normal text-accent">Masterclasses.</em>
@@ -339,7 +372,7 @@
   <section id="kontakt" class="py-16 md:py-[clamp(80px,12vh,140px)] relative">
     <div class="reveal mb-16 grid items-baseline gap-10 md:grid-cols-[180px_1fr]">
       <div class="font-mono text-[12px] tracking-[0.12em] uppercase text-fg-muted">
-        <span class="text-accent">●</span> 07 &nbsp;/&nbsp; Kontakt
+        <span class="text-accent">●</span> 08 &nbsp;/&nbsp; Kontakt
       </div>
       <h2 class="m-0 max-w-[20ch] font-sans font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(38px,5.2vw,72px)]">
         Kontakt &amp;<br/><em class="not-italic font-normal text-accent">Impressum.</em>

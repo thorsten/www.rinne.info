@@ -5,6 +5,9 @@
  *   <!-- @content talks -->
  *   <!-- @content certifications -->
  *   <!-- @content experience -->
+ *   <!-- @content photos -->
+ *   <!-- @content opensource --> (projects with live GitHub stars, see plugins/opensource.ts)
+ *   {{count:experience}}         (number of entries in a content file)
  *
  * Output is plain static HTML, so SEO and no-JS rendering stay intact. Editing a JSON file
  * in dev triggers a full reload.
@@ -13,6 +16,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Plugin } from "vite";
+import { loadOpenSource, renderOpenSource } from "./opensource.ts";
 
 export interface Talk {
   year: number;
@@ -59,6 +63,8 @@ export interface Experience {
 }
 
 const CONTENT_DIR = "content";
+/** Talks of the newest N years are open; older years sit in a collapsed archive. */
+const TALK_YEARS_OPEN = 5;
 
 const ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" };
 
@@ -80,25 +86,39 @@ export function renderTalks(talks: readonly Talk[]): string {
     byYear.set(talk.year, [...(byYear.get(talk.year) ?? []), talk]);
   }
   const years = [...byYear.keys()].toSorted((a, b) => b - a);
-
-  return years
-    .map((year) => {
-      const items = (byYear.get(year) ?? [])
-        .map(
-          (talk) => `          <li>
+  const newest = years[0] ?? 0;
+  const render = (year: number): string => {
+    const items = (byYear.get(year) ?? [])
+      .map(
+        (talk) => `          <li>
             <div class="when">${escapeHtml(talk.date)}</div>
             <div class="what"><strong>»${escapeHtml(talk.title)}«</strong><span>${renderLinkedText(talk.text, talk.link)}</span></div>
           </li>`,
-        )
-        .join("\n");
-      return `      <div class="talk-year">
+      )
+      .join("\n");
+    return `      <div class="talk-year">
         <div class="y">${year}</div>
         <ul class="talk-items">
 ${items}
         </ul>
       </div>`;
-    })
-    .join("\n\n");
+  };
+
+  const open = years.filter((y) => y > newest - TALK_YEARS_OPEN);
+  const archived = years.filter((y) => y <= newest - TALK_YEARS_OPEN);
+  const archivedCount = archived.reduce((n, y) => n + (byYear.get(y)?.length ?? 0), 0);
+  const oldest = archived.at(-1);
+
+  let html = open.map(render).join("\n\n");
+  if (archived.length > 0 && oldest !== undefined) {
+    html += `
+
+      <details class="talk-archive">
+        <summary>${archivedCount} weitere Vorträge und Workshops seit ${oldest} anzeigen</summary>
+${archived.map(render).join("\n\n")}
+      </details>`;
+  }
+  return html;
 }
 
 export function renderCertifications(certifications: readonly Certification[]): string {
@@ -139,6 +159,7 @@ export function renderPhotos(photos: readonly Photo[]): string {
       const span = p.size ? PHOTO_SIZE_CLASSES[p.size] : "";
       const date = p.date ? `<span class="hidden text-white/60 sm:inline">${escapeHtml(p.date)}</span>` : "";
       return `      <figure class="ph relative m-0 overflow-hidden rounded-card border border-rule-soft bg-bg-elev${span}">
+        <button type="button" class="ph-open absolute inset-0 z-3 m-0 cursor-zoom-in border-0 bg-transparent p-0" data-src="${base}-1100.webp" data-avif="${base}-1100.avif" data-caption="${escapeHtml(p.place)}${p.date ? ` · ${escapeHtml(p.date)}` : ""}" aria-label="${escapeHtml(p.alt)} groß anzeigen"></button>
         <picture>
           <source type="image/avif" srcset="${base}-600.avif 600w, ${base}-1100.avif 1100w" sizes="${sizes}">
           <source type="image/webp" srcset="${base}-600.webp 600w, ${base}-1100.webp 1100w" sizes="${sizes}">
@@ -176,14 +197,30 @@ export function contentPlugin(root: string = process.cwd()): Plugin {
         if (file.startsWith(dir)) server.ws.send({ type: "full-reload" });
       });
     },
-    transformIndexHtml(html) {
-      return html.replace(/^[ \t]*<!-- @content (\w+) -->[ \t]*$/gm, (_match, name: string) => {
-        const section = SECTIONS[name];
-        if (!section) throw new Error(`Unknown content section "${name}"`);
+    async transformIndexHtml(html) {
+      const counts = new Map<string, number>();
+      for (const [name, section] of Object.entries(SECTIONS)) {
         const data = readJson(path.join(dir, section.file));
-        if (!Array.isArray(data)) throw new Error(`${section.file} must contain an array`);
-        return section.render(data as never);
-      });
+        if (Array.isArray(data)) counts.set(name, data.length);
+      }
+      const opensource = html.includes("<!-- @content opensource -->")
+        ? renderOpenSource(await loadOpenSource(path.join(dir, "opensource.json")))
+        : "";
+
+      return html
+        .replace(/\{\{count:(\w+)\}\}/g, (_match, name: string) => {
+          const count = counts.get(name);
+          if (count === undefined) throw new Error(`Unknown count "${name}"`);
+          return String(count);
+        })
+        .replace(/^[ \t]*<!-- @content (\w+) -->[ \t]*$/gm, (_match, name: string) => {
+          if (name === "opensource") return opensource;
+          const section = SECTIONS[name];
+          if (!section) throw new Error(`Unknown content section "${name}"`);
+          const data = readJson(path.join(dir, section.file));
+          if (!Array.isArray(data)) throw new Error(`${section.file} must contain an array`);
+          return section.render(data as never);
+        });
     },
   };
 }

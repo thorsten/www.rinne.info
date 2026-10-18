@@ -37,10 +37,11 @@ index.html                  main page (Vite entry)
 datenschutzerklaerung.html  privacy page (Vite entry)
 src/css/main.css            Tailwind v4 theme and components
 src/js/main.ts              entry point: fonts, CSS, site behaviour
-src/js/site/                nav, theme, scroll, reveal, experience cards
+src/js/site/                nav, theme, scroll, reveal, experience cards, lightbox
 static/                     copied as-is: favicons, images, robots.txt, sitemap.xml
-content/                    talks, certifications, experience and photos as JSON, see below
+content/                    talks, certifications, experience, photos, open source as JSON, see below
 plugins/content.ts          Vite plugin that renders content/ into index.html
+plugins/opensource.ts       open-source section, fetches GitHub stars at build time
 bin/images.ts               responsive image generator, see below
 ```
 
@@ -61,11 +62,18 @@ Talks, certifications, career stations and the travel gallery live in `content/*
 }
 ```
 
-`link` is optional; its `label` must appear verbatim in `text`. Talks are grouped by year, newest first.
+`link` is optional; its `label` must appear verbatim in `text`. Talks are grouped by year, newest first;
+years older than the newest five are collapsed into an archive (`TALK_YEARS_OPEN` in `plugins/content.ts`).
+`{{count:experience}}` and friends in the HTML are replaced with the number of entries in that file.
 Certifications are sorted by year, stations by end year with `"to": null` meaning today.
 Photos (`content/photos.json`) are shown in file order. Optional `size` is `large` (2×2), `wide` (2×1) or
 `tall` (1×2); the grid packs densely, so keep the cell count per row group a multiple of four. `file` is the base name under
-`static/images/reisen/`, which needs `<file>-600` and `<file>-1100` as `.avif` and `.webp`.
+`static/images/reisen/`, which needs `<file>-600` and `<file>-1100` as `.avif` and `.webp`. Clicking a photo
+opens it in a `<dialog>` lightbox.
+
+Open source (`content/opensource.json`) lists own projects (`repo` as GitHub `owner/name`) and contributions.
+Star counts are fetched from the GitHub API during the build with a 5 s timeout and written back into the
+JSON as cache, so offline builds keep the last numbers.
 
 ## Images
 
