@@ -7,5 +7,5 @@
   "trailingComma": "all",
   "arrowParens": "always",
   "endOfLine": "lf",
-  "ignorePatterns": ["public", "node_modules", "static", "pnpm-lock.yaml"]
+  "ignorePatterns": ["public", "node_modules", "static", "pnpm-lock.yaml", "*.html", "*.md", "*.yml", "*.yaml"]
 }
